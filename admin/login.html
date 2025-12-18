@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Oktay Hukuk Bürosu - Giriş</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-gradient-primary">
+
+    <div class="container">
+
+        <!-- Outer Row -->
+        <div class="row justify-content-center">
+
+            <div class="col-xl-6 col-lg-6 col-md-9">
+
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-0">
+                        <!-- Nested Row within Card Body -->
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="p-5">
+                                    <div class="text-center">
+                                        <h1 class="h4 text-gray-900 mb-4">Oktay Hukuk Bürosu YÖNETİM</h1>
+                                    </div>
+                                    <form class="user">
+                                        <div class="form-group">
+                                            <input type="email" class="form-control form-control-user" id="email"
+                                                aria-describedby="emailHelp" placeholder="E-posta Adresi">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control form-control-user" id="password"
+                                                placeholder="Şifre">
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="custom-control custom-checkbox small">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck">
+                                                <label class="custom-control-label" for="customCheck">Beni
+                                                    Hatırla</label>
+                                            </div>
+                                        </div>
+                                        <button type="button" id="loginBtn" class="btn btn-primary btn-user btn-block">
+                                            Giriş Yap
+                                        </button>
+                                    </form>
+                                    <hr>
+                                    <div class="text-center">
+                                        <a class="small" href="#">Şifremi Unuttum</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Supabase JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabase-config.js"></script>
+
+    <script>
+        async function girisYap() {
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const loginBtn = document.getElementById("loginBtn");
+
+            // Basic Validation
+            if (!email || !password) {
+                alert("Lütfen e-posta ve şifrenizi giriniz.");
+                return;
+            }
+
+            // UI Loading State
+            loginBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Giriş Yapılıyor...';
+            loginBtn.disabled = true;
+
+            try {
+                const { data, error } = await supabaseClient.auth.signInWithPassword({
+                    email: email,
+                    password: password,
+                });
+
+                if (error) {
+                    throw error;
+                }
+
+                // Success
+                window.location.href = "index.html";
+
+            } catch (error) {
+                alert("Giriş Başarısız: " + error.message);
+                loginBtn.innerHTML = 'Giriş Yap';
+                loginBtn.disabled = false;
+            }
+        }
+
+        // Bind click event
+        document.getElementById("loginBtn").addEventListener("click", girisYap);
+
+        // Allow Enter key to submit
+        document.addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                girisYap();
+            }
+        });
+    </script>
+
+</body>
+
+</html>

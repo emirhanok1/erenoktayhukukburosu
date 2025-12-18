@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- Ana Sayfa -->
+  <url>
+    <loc>https://www.erenoktay.av.tr/</loc>
+    <lastmod>2025-12-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Hakkımızda -->
+  <url>
+    <loc>https://www.erenoktay.av.tr/about.html</loc>
+    <lastmod>2025-12-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Uzmanlık Alanları -->
+  <url>
+    <loc>https://www.erenoktay.av.tr/service.html</loc>
+    <lastmod>2025-12-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- İletişim -->
+  <url>
+    <loc>https://www.erenoktay.av.tr/contact.html</loc>
+    <lastmod>2025-12-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Blog/Duyurular -->
+  <url>
+    <loc>https://www.erenoktay.av.tr/blog.html</loc>
+    <lastmod>2025-12-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- İnfaz Hesaplama -->
+  <url>
+    <loc>https://www.erenoktay.av.tr/infaz-hesaplama.html</loc>
+    <lastmod>2025-12-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- İş Kazası Tazminat -->
+  <url>
+    <loc>https://www.erenoktay.av.tr/is-kazasi-tazminat.html</loc>
+    <lastmod>2025-12-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Ekip -->
+  <url>
+    <loc>https://www.erenoktay.av.tr/team.html</loc>
+    <lastmod>2025-12-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- Portfolio -->
+  <url>
+    <loc>https://www.erenoktay.av.tr/portfolio.html</loc>
+    <lastmod>2025-12-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+</urlset>

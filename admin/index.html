@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SB Admin 2 - Dashboard</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">YÖNETİM PANELİ</div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Duyuru Ekle -->
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-fw fa-edit"></i>
+                    <span>Duyuru Yönetimi</span></a>
+            </li>
+
+            <!-- Nav Item - Gelen Kutusu -->
+            <li class="nav-item">
+                <a class="nav-link" href="messages.html">
+                    <i class="fas fa-fw fa-envelope"></i>
+                    <span>Gelen Kutusu</span></a>
+            </li>
+
+            <!-- Nav Item - Asgari Ücret -->
+            <li class="nav-item">
+                <a class="nav-link" href="wages.html">
+                    <i class="fas fa-fw fa-money-bill-wave"></i>
+                    <span>Asgari Ücret Yönetimi</span></a>
+            </li>
+
+            <!-- Nav Item - Duyuru Listesi -->
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-fw fa-list"></i>
+                    <span>Duyuru Listesi</span></a>
+            </li>
+
+            <!-- Nav Item - Siteye Dön -->
+            <li class="nav-item">
+                <a class="nav-link" href="../index.html">
+                    <i class="fas fa-fw fa-globe"></i>
+                    <span>Siteye Dön</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <div class="topbar-divider d-none d-sm-block"></div>
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Av. Eren Oktay</span>
+                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Duyuru Yönetimi</h1>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <!-- Basic Card Example -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Yeni Duyuru / Haber Ekle</h6>
+                                </div>
+                                <div class="card-body">
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="title">Duyuru Başlığı</label>
+                                            <input type="text" class="form-control" id="title"
+                                                placeholder="Başlık giriniz...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="category">Kategori</label>
+                                            <select class="form-control" id="category">
+                                                <option>Haberler</option>
+                                                <option>Yargıtay Kararları</option>
+                                                <option>Makaleler</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="duyuruContent">İçerik</label>
+                                            <textarea class="form-control" id="duyuruContent" rows="5"></textarea>
+                                        </div>
+
+                                        <!-- Image Upload Area -->
+                                        <div class="form-group">
+                                            <label>Kapak Resmi</label>
+                                            <div id="imagePreviewContainer" class="border rounded text-center p-3"
+                                                style="cursor: pointer; background-color: #f8f9fa; min-height: 200px; position: relative;">
+
+                                                <!-- Preview Image -->
+                                                <img id="imagePreview" src=""
+                                                    style="max-width: 100%; max-height: 300px; display: none; border-radius: 5px;">
+
+                                                <!-- Placeholder / Prompt -->
+                                                <div id="uploadPrompt"
+                                                    class="d-flex flex-column align-items-center justify-content-center"
+                                                    style="height: 100%; min-height: 150px;">
+                                                    <i class="fas fa-image fa-3x text-gray-400 mb-2"></i>
+                                                    <p class="mb-0 text-gray-600">Resim Seçmek veya Değiştirmek İçin
+                                                        Tıklayın</p>
+                                                    <small class="text-gray-500">(Mevcut resmi değiştirmek
+                                                        istemiyorsanız boş bırakın)</small>
+                                                </div>
+
+                                                <!-- Hidden Input -->
+                                                <input type="file" id="coverImage" style="display: none;"
+                                                    accept="image/*">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="attachment">Dosya Eki (PDF/Word)</label>
+                                            <input type="file" class="form-control-file" id="attachment">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary btn-block">Kaydet ve
+                                            Yayınla</button>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <!-- Recent Announcements Table -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Son Eklenen Duyurular Listesi</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered" width="100%" cellspacing="0">
+                                            <thead>
+                                                <tr>
+                                                    <th>Başlık</th>
+                                                    <th>Kategori</th>
+                                                    <th>Tarih</th>
+                                                    <th>Durum</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="duyuruListesi">
+                                                <!-- Dynamic Content -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Oktay Hukuk Bürosu 2025</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Supabase JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabase-config.js"></script>
+    <script src="js/auth-check.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script>
+        // Constants
+        let currentEditId = null; // Track if we are editing
+
+        $(document).ready(function () {
+            // Initial Load
+            loadAnnouncements();
+
+            // --- 0. UI Logic for Image Upload ---
+            // Trigger file input on container click
+            $('#imagePreviewContainer').on('click', function () {
+                $('#coverImage').click();
+            });
+
+            // Prevent container click when clicking input itself (bubbling fix)
+            $('#coverImage').on('click', function (e) {
+                e.stopPropagation();
+            });
+
+            // Handle File Selection & Preview
+            $('#coverImage').on('change', function (e) {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        $('#imagePreview').attr('src', e.target.result).show();
+                        $('#uploadPrompt').hide();
+                    }
+                    reader.readAsDataURL(file);
+                }
+            });
+
+            // --- 1. Load Announcements ---
+            async function loadAnnouncements() {
+                const tbody = $('#duyuruListesi');
+                tbody.html('<tr><td colspan="4" class="text-center"><i class="fas fa-spinner fa-spin"></i> Yükleniyor...</td></tr>');
+
+                try {
+                    const { data, error } = await supabaseClient
+                        .from('announcements')
+                        .select('*')
+                        .order('created_at', { ascending: false });
+
+                    if (error) throw error;
+
+                    tbody.empty();
+
+                    if (data.length === 0) {
+                        tbody.html('<tr><td colspan="4" class="text-center">Henüz duyuru eklenmemiş.</td></tr>');
+                        return;
+                    }
+
+                    data.forEach(item => {
+                        const date = new Date(item.created_at).toLocaleDateString('tr-TR');
+                        const row = `
+                            <tr>
+                                <td>${item.title}</td>
+                                <td>${item.category}</td>
+                                <td>${date}</td>
+                                <td>
+                                    <button class="btn btn-warning btn-sm edit-btn mr-1" data-id="${item.id}">
+                                        <i class="fas fa-edit"></i> Düzenle
+                                    </button>
+                                    <button class="btn btn-danger btn-sm delete-btn" data-id="${item.id}">
+                                        <i class="fas fa-trash"></i> Sil
+                                    </button>
+                                </td>
+                            </tr>
+                        `;
+                        tbody.append(row);
+                    });
+
+                    // Bind Events
+                    $('.delete-btn').on('click', function () {
+                        const id = $(this).data('id');
+                        deleteAnnouncement(id);
+                    });
+
+                    $('.edit-btn').on('click', function () {
+                        const id = $(this).data('id');
+                        startEdit(id);
+                    });
+
+                } catch (error) {
+                    console.error('Error loading:', error);
+                    tbody.html(`<tr><td colspan="4" class="text-center text-danger">Hata: ${error.message}</td></tr>`);
+                }
+            }
+
+            // --- 2. Add / Update Announcement ---
+            $('form').on('submit', async function (e) {
+                e.preventDefault();
+
+                const submitBtn = $(this).find('button[type="submit"]');
+                const originalText = submitBtn.html();
+
+                // Get values
+                const title = $('#title').val();
+                const category = $('#category').val();
+                const content = $('#duyuruContent').val();
+                const imageFile = $('#coverImage')[0].files[0];
+
+                if (!title || !category || !content) {
+                    alert("Lütfen başlık, kategori ve içerik alanlarını doldurun.");
+                    return;
+                }
+
+                // UI Loading
+                submitBtn.html('<i class="fas fa-spinner fa-spin"></i> İşleniyor...');
+                submitBtn.prop('disabled', true);
+
+                try {
+                    let imageUrl = null;
+
+                    // Image Upload (Convert to Base64 and store in DB)
+                    if (imageFile) {
+                        console.log("Processing image:", imageFile.name);
+                        // Convert image to Base64 data URL
+                        imageUrl = await convertToBase64(imageFile);
+                        console.log("Image converted to Base64 (length:", imageUrl.length, ")");
+                    } else if (currentEditId) {
+                        // Keep existing if editing and no new file
+                        // Note: Logic below handles this via 'updates' construction
+                    }
+
+                    if (currentEditId) {
+                        // --- UPDATE MODE ---
+                        const updates = {
+                            title: title,
+                            category: category,
+                            content: content,
+                            updated_at: new Date()
+                        };
+
+                        if (imageUrl) {
+                            updates.image_url = imageUrl;
+                        }
+
+                        const { error } = await supabaseClient
+                            .from('announcements')
+                            .update(updates)
+                            .eq('id', currentEditId);
+
+                        if (error) throw error;
+                        alert("Duyuru başarıyla güncellendi!");
+
+                    } else {
+                        // --- INSERT MODE ---
+                        const insertData = {
+                            title: title,
+                            category: category,
+                            content: content,
+                            image_url: imageUrl, // Might be null
+                            is_active: true
+                        };
+
+                        console.log("Inserting:", insertData);
+
+                        const { data, error } = await supabaseClient
+                            .from('announcements')
+                            .insert([insertData]);
+
+                        if (error) throw error;
+                        alert("Duyuru başarıyla yayınlandı!");
+                    }
+
+                    // Reset Form
+                    resetForm();
+                    loadAnnouncements(); // Refresh list
+
+                } catch (error) {
+                    console.error('Error saving:', error);
+                    alert("Hata oluştu: " + error.message);
+                } finally {
+                    submitBtn.html(currentEditId ? 'Güncelle' : 'Kaydet ve Yayınla');
+                    submitBtn.prop('disabled', false);
+                }
+            });
+
+            // --- 3. Start Edit ---
+            async function startEdit(id) {
+                try {
+                    // Fetch details
+                    const { data, error } = await supabaseClient
+                        .from('announcements')
+                        .select('*')
+                        .eq('id', id)
+                        .single();
+
+                    if (error) throw error;
+
+                    // Populate Form
+                    $('#title').val(data.title);
+                    $('#category').val(data.category);
+                    $('#duyuruContent').val(data.content);
+
+                    // Populate Image Preview
+                    if (data.image_url) {
+                        $('#imagePreview').attr('src', data.image_url).show();
+                        $('#uploadPrompt').hide();
+                    } else {
+                        $('#imagePreview').hide();
+                        $('#uploadPrompt').show();
+                    }
+
+                    // Set State
+                    currentEditId = id;
+
+                    // UI Updates
+                    $('html, body').animate({ scrollTop: 0 }, 'fast');
+                    $('.card-header h6').text('Duyuruyu Düzenle');
+                    const submitBtn = $('form button[type="submit"]');
+                    submitBtn.text('Güncelle').removeClass('btn-primary').addClass('btn-warning');
+
+                    // Add Cancel Button if not exists
+                    if ($('#cancelEdit').length === 0) {
+                        submitBtn.after('<button type="button" id="cancelEdit" class="btn btn-secondary btn-block mt-2">İptal</button>');
+                    }
+
+                    $('#cancelEdit').off('click').on('click', resetForm);
+
+                } catch (error) {
+                    console.error('Error fetching details:', error);
+                    alert('Duyuru bilgileri alınamadı.');
+                }
+            }
+
+            // --- 4. Reset Form ---
+            function resetForm() {
+                $('form')[0].reset();
+                currentEditId = null;
+
+                // Reset Preview
+                $('#imagePreview').hide().attr('src', '');
+                $('#uploadPrompt').show();
+
+                // CRITICAL FIX: Completely replace file input to clear browser memory
+                const oldInput = $('#coverImage');
+                const newInput = oldInput.clone();
+                oldInput.replaceWith(newInput);
+
+                // Rebind change event to new input
+                $('#coverImage').on('change', function (e) {
+                    const file = e.target.files[0];
+                    if (file) {
+                        const reader = new FileReader();
+                        reader.onload = function (e) {
+                            $('#imagePreview').attr('src', e.target.result).show();
+                            $('#uploadPrompt').hide();
+                        }
+                        reader.readAsDataURL(file);
+                    }
+                });
+
+                $('.card-header h6').text('Yeni Duyuru / Haber Ekle');
+                const submitBtn = $('form button[type="submit"]');
+                submitBtn.text('Kaydet ve Yayınla').removeClass('btn-warning').addClass('btn-primary');
+                $('#cancelEdit').remove();
+            }
+
+            // --- 5. Delete Announcement ---
+            async function deleteAnnouncement(id) {
+                // Simplified: No confirm dialog due to file:// protocol issues
+                // User can always undo by re-adding from backup
+
+                try {
+                    const { error } = await supabaseClient
+                        .from('announcements')
+                        .delete()
+                        .eq('id', id);
+
+                    if (error) throw error;
+
+                    alert("Duyuru silindi.");
+                    loadAnnouncements();
+
+                } catch (error) {
+                    console.error('Delete error:', error);
+                    alert("Silme hatası: " + error.message);
+                }
+            }
+
+            // --- 6. Sidebar Link using ---
+            $('a[href="#"]').on('click', function (e) {
+                e.preventDefault();
+            });
+            // --- 7. Convert Image to Base64 Data URL ---
+            function convertToBase64(file) {
+                return new Promise((resolve, reject) => {
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        const img = new Image();
+                        img.onload = function () {
+                            const canvas = document.createElement('canvas');
+
+                            // Resize if too large (max 1200px width)
+                            let width = img.width;
+                            let height = img.height;
+                            const maxWidth = 1200;
+
+                            if (width > maxWidth) {
+                                height = (height * maxWidth) / width;
+                                width = maxWidth;
+                            }
+
+                            canvas.width = width;
+                            canvas.height = height;
+                            const ctx = canvas.getContext('2d');
+                            ctx.drawImage(img, 0, 0, width, height);
+
+                            // Convert to Base64 with compression (0.8 quality for JPEG)
+                            const base64 = canvas.toDataURL('image/jpeg', 0.8);
+                            resolve(base64);
+                        };
+                        img.onerror = reject;
+                        img.src = e.target.result;
+                    };
+                    reader.onerror = reject;
+                    reader.readAsDataURL(file);
+                });
+            }
+        });
+
+        // Logout handling setup in auth-check.js via UI, but explicit button here:
+        // Note: The logout modal button href needs to be changed to # and handled via JS
+        // We will modify the logout modal button in html via JS for simplicity or assume standard logout
+    </script>
+</body>
+
+</html>
