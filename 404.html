@@ -137,7 +137,7 @@
         <div class="contact" style="margin-bottom: 90px;">
             <div class="container">
                 <div class="section-header">
-                    <h2>Aradığınız Sayfa Mevcut Değil</h2>
+                    <h1>Aradığınız Sayfa Mevcut Değil</h1>
                 </div>
                 <div class="row align-items-center justify-content-center text-center">
                     <div class="col-md-8">
@@ -188,7 +188,7 @@
                                     <p><i class="fa fa-map-marker-alt"></i>Aşağı Öveçler Mah. 1331. Cad. No: 3/3
                                         Çankaya/Ankara</p>
                                     <p><i class="fa fa-phone-alt"></i>0507 400 71 40</p>
-                                    <p><i class="fa fa-envelope"></i>info@erenoktay.av.tr</p>
+                                    <p><i class="fa fa-envelope"></i>av.eren.oktay@gmail.com</p>
                                     <div class="footer-social">
                                         <a href="https://www.facebook.com/Av.ErenOktay/"><i
                                                 class="fab fa-facebook-f"></i></a>
@@ -227,6 +227,40 @@
 
     <!-- Template Javascript -->
     <script src="js/main.min.js"></script>
+
+    <!-- Vanilla JS Bootstrap Replacement (Navbar & Dropdown) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // 1. Navbar Toggle
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            const navbarCollapse = document.querySelector('#navbarCollapse');
+            if (navbarToggler && navbarCollapse) {
+                navbarToggler.addEventListener('click', function () {
+                    navbarCollapse.classList.toggle('show');
+                });
+            }
+            // 2. Dropdown Menü
+            const dropdownToggles = document.querySelectorAll('[data-toggle="dropdown"]');
+            dropdownToggles.forEach(function (toggle) {
+                toggle.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const dropdownMenu = this.nextElementSibling;
+                    document.querySelectorAll('.dropdown-menu.show').forEach(function (menu) {
+                        if (menu !== dropdownMenu) menu.classList.remove('show');
+                    });
+                    dropdownMenu.classList.toggle('show');
+                });
+            });
+            // 3. Dropdown dışı tıklama
+            document.addEventListener('click', function (e) {
+                if (!e.target.matches('[data-toggle="dropdown"]')) {
+                    document.querySelectorAll('.dropdown-menu.show').forEach(function (menu) {
+                        menu.classList.remove('show');
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

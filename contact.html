@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 
 <head>
     <meta charset="utf-8">
@@ -31,8 +31,6 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;1,400&display=swap"
         rel="stylesheet">
 
-
-
     <!-- CSS Libraries -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -60,6 +58,49 @@
           "name": "İletişim",
           "item": "https://www.erenoktay.av.tr/contact.html"
         }
+      ]
+    }
+    </script>
+
+    <!-- Local Business / Legal Service Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LegalService",
+      "name": "Av. Eren Oktay Hukuk Bürosu",
+      "description": "Ankara Çankaya merkezli profesyonel hukuk bürosu. Ceza hukuku, aile hukuku ve tazminat hukuku alanlarında uzman hizmet.",
+      "url": "https://www.erenoktay.av.tr",
+      "telephone": "+905074007140",
+      "email": "av.eren.oktay@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Aşağı Öveçler Mah. 1331. Cad. No: 3/3",
+        "addressLocality": "Çankaya",
+        "addressRegion": "Ankara",
+        "postalCode": "06460",
+        "addressCountry": "TR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "39.893264",
+        "longitude": "32.815266"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "priceRange": "$$",
+      "areaServed": {
+        "@type": "City",
+        "name": "Ankara"
+      },
+      "hasMap": "https://maps.app.goo.gl/KWbv9mHv4iGEZH4d7",
+      "sameAs": [
+        "https://www.facebook.com/Av.ErenOktay/",
+        "https://www.instagram.com/av.erenoktay/",
+        "https://www.linkedin.com/in/eren-oktay-4585a1343"
       ]
     }
     </script>
@@ -164,7 +205,7 @@
             <div class="contact">
                 <div class="container">
                     <div class="section-header">
-                        <h2>İletişim Bilgilerimiz</h2>
+                        <h1>Bize Ulaşın - Av. Eren Oktay Hukuk Bürosu</h1>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
@@ -188,7 +229,7 @@
                                     <i class="fa fa-envelope"></i>
                                     <div class="contact-text">
                                         <h2>E-posta</h2>
-                                        <p>info@erenoktay.av.tr</p>
+                                        <p>av.eren.oktay@gmail.com</p>
                                     </div>
                                 </div>
                             </div>
@@ -230,6 +271,13 @@
                             <div class="section-header">
                                 <h2>Ofisimizin Konumu</h2>
                             </div>
+                            <div class="mb-3 text-center">
+                                <a href="https://maps.app.goo.gl/KWbv9mHv4iGEZH4d7" target="_blank"
+                                    rel="noopener noreferrer" class="btn"
+                                    style="background: #0b2d71; color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; display: inline-block;">
+                                    <i class="fa fa-map-marker-alt mr-2"></i>Google Maps'te Aç
+                                </a>
+                            </div>
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3060.038753267592!2d32.81266631565576!3d39.89326497942917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d34f40076a591b%3A0xe6786c6731976212!2sA%C5%9Fa%C4%9F%C4%9F%C4%B1%20%C3%96ve%C3%A7ler%2C%201331.%20Cd.%20No%3A3%2C%2006460%20%C3%87ankaya%2FAnkara!5e0!3m2!1str!2str!4v1672927238234!5m2!1str!2str"
                                 width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
@@ -240,9 +288,9 @@
                     <!-- Office Photos Gallery - Trust & Local SEO -->
                     <div class="row mt-5">
                         <div class="col-12">
-                            <h3 class="text-center mb-4" style="color: #0b2d71; font-weight: 600;">OFİSİMİZDEN
+                            <h2 class="text-center mb-4" style="color: #0b2d71; font-weight: 600;">OFİSİMİZDEN
                                 GÖRÜNTÜLER
-                            </h3>
+                            </h2>
                             <p class="text-center mb-4" style="color: #666;">Ankara Çankaya'da bulunan modern ofisimizde
                                 sizi ağırlamaktan mutluluk duyarız.</p>
                         </div>
@@ -264,16 +312,6 @@
                 </div>
             </div>
             <!-- Contact End -->
-
-            <!-- Supabase Scripts -->
-            <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-            <script src="js/supabase-config.js"></script>
-            <script src="js/contact-form.js"></script>
-
-
-
-
-
         </main>
 
         <footer>
@@ -306,8 +344,6 @@
                                         <h2>Hızlı Erişim</h2>
                                         <a href="about.html">Hakkımızda</a>
                                         <a href="service.html">Hizmetler</a>
-
-
                                         <a href="contact.html">İletişim</a>
                                     </div>
                                 </div>
@@ -317,7 +353,7 @@
                                         <p><i class="fa fa-map-marker-alt"></i>Aşağı Öveçler Mah. 1331. Cad. No: 3/3
                                             Çankaya/Ankara</p>
                                         <p><i class="fa fa-phone-alt"></i>0507 400 71 40</p>
-                                        <p><i class="fa fa-envelope"></i>info@erenoktay.av.tr</p>
+                                        <p><i class="fa fa-envelope"></i>av.eren.oktay@gmail.com</p>
                                         <div class="footer-social">
 
                                             <a href="https://www.facebook.com/Av.ErenOktay/"><i
@@ -364,6 +400,11 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <!-- Supabase Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase-config.js"></script>
+    <script src="js/contact-form.js"></script>
 </body>
 
 </html>

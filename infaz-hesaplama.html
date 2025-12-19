@@ -36,6 +36,28 @@
     <!-- Template Stylesheet -->
     <link href="css/style.min.css" rel="stylesheet">
 
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Ana Sayfa",
+          "item": "https://www.erenoktay.av.tr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "İnfaz Hesaplama",
+          "item": "https://www.erenoktay.av.tr/infaz-hesaplama.html"
+        }
+      ]
+    }
+    </script>
+
     <style>
         .form-section {
             background: #f9f9f9;
@@ -158,7 +180,7 @@
         <div class="contact">
             <div class="container">
                 <div class="section-header">
-                    <h2>2026 İnfaz Hesaplama - 11. Yargı Paketi</h2>
+                    <h1>2026 İnfaz Hesaplama - 11. Yargı Paketi</h1>
                     <p>11. Yargı Paketi ve TCK'ya göre güncel denetimli serbestlik süreleri ile tahmini yatar sürenizi
                         hesaplayın.</p>
                 </div>
@@ -525,7 +547,7 @@
                                     <p><i class="fa fa-map-marker-alt"></i>Aşağı Öveçler Mah. 1331. Cad. No: 3/3
                                         Çankaya/Ankara</p>
                                     <p><i class="fa fa-phone-alt"></i>0507 400 71 40</p>
-                                    <p><i class="fa fa-envelope"></i>info@erenoktay.av.tr</p>
+                                    <p><i class="fa fa-envelope"></i>av.eren.oktay@gmail.com</p>
                                     <div class="footer-social">
                                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                                         <a href="#"><i class="fab fa-instagram"></i></a>
@@ -569,6 +591,40 @@
 
     <!-- İnfaz Hesaplama Motoru -->
     <script src="js/infaz.js"></script>
+
+    <!-- Vanilla JS Bootstrap Replacement (Navbar & Dropdown) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // 1. Navbar Toggle
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            const navbarCollapse = document.querySelector('#navbarCollapse');
+            if (navbarToggler && navbarCollapse) {
+                navbarToggler.addEventListener('click', function () {
+                    navbarCollapse.classList.toggle('show');
+                });
+            }
+            // 2. Dropdown Menü
+            const dropdownToggles = document.querySelectorAll('[data-toggle="dropdown"]');
+            dropdownToggles.forEach(function (toggle) {
+                toggle.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const dropdownMenu = this.nextElementSibling;
+                    document.querySelectorAll('.dropdown-menu.show').forEach(function (menu) {
+                        if (menu !== dropdownMenu) menu.classList.remove('show');
+                    });
+                    dropdownMenu.classList.toggle('show');
+                });
+            });
+            // 3. Dropdown dışı tıklama
+            document.addEventListener('click', function (e) {
+                if (!e.target.matches('[data-toggle="dropdown"]')) {
+                    document.querySelectorAll('.dropdown-menu.show').forEach(function (menu) {
+                        menu.classList.remove('show');
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

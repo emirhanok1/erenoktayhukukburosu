@@ -5,6 +5,10 @@
     <meta charset="utf-8">
     <title>KVKK Aydınlatma Metni | Av. Eren Oktay</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="description"
+        content="Av. Eren Oktay Hukuk Bürosu KVKK Aydınlatma Metni. Kişisel verilerinizin korunması ve işlenmesi hakkında detaylı bilgi.">
+    <meta name="keywords"
+        content="KVKK, kişisel verilerin korunması, Av. Eren Oktay, gizlilik politikası, Ankara avukat">
 
     <!-- CSS Libraries -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
@@ -14,6 +18,28 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Ana Sayfa",
+          "item": "https://www.erenoktay.av.tr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "KVKK Aydınlatma Metni",
+          "item": "https://www.erenoktay.av.tr/kvkk.html"
+        }
+      ]
+    }
+    </script>
 </head>
 
 <body>
@@ -26,7 +52,8 @@
                         <div class="logo">
                             <a href="index.html" class="navbar-brand"
                                 style="display: flex; align-items: center; text-decoration: none;">
-                                <img src="img/logo.png" alt="Logo" style="height: 60px; margin-right: 15px;">
+                                <img src="img/logo.webp" alt="Av. Eren Oktay Hukuk Bürosu Logo"
+                                    style="height: 60px; margin-right: 15px;">
                                 <h1
                                     style="font-family: 'Cinzel', serif; font-size: 26px; font-weight: 700; text-transform: uppercase; color: #ffffff; letter-spacing: 1px; margin: 0; line-height: 1;">
                                     Avukat Eren <span
@@ -43,9 +70,7 @@
                                 <p>Ücretsiz Ön Görüşme İçin Arayın</p>
                             </div>
                             <div class="social">
-
                                 <a href="#"><i class="fab fa-facebook-f"></i></a>
-
                                 <a href="#"><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
@@ -69,8 +94,6 @@
                             <a href="index.html" class="nav-item nav-link">Ana Sayfa</a>
                             <a href="about.html" class="nav-item nav-link">Hakkımızda</a>
                             <a href="service.html" class="nav-item nav-link">Uzmanlık Alanları</a>
-
-
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Sayfalar</a>
                                 <div class="dropdown-menu">
@@ -111,7 +134,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-header">
-                            <h2>Kişisel Verilerin Korunması</h2>
+                            <h1>KVKK Aydınlatma Metni - Kişisel Verileriniz Güvende</h1>
                         </div>
                         <div class="about-text">
                             <h3>1. Veri Sorumlusu</h3>
@@ -176,8 +199,42 @@
         <!-- Footer End -->
     </div>
 
-    <!-- JavaScript Libraries -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <!-- Vanilla JS Bootstrap Replacement -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Navbar Toggle
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            const navbarCollapse = document.querySelector('#navbarCollapse');
+
+            if (navbarToggler && navbarCollapse) {
+                navbarToggler.addEventListener('click', function () {
+                    navbarCollapse.classList.toggle('show');
+                });
+            }
+
+            // Dropdown Menü
+            const dropdownToggles = document.querySelectorAll('[data-toggle="dropdown"]');
+            dropdownToggles.forEach(function (toggle) {
+                toggle.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const dropdownMenu = this.nextElementSibling;
+                    document.querySelectorAll('.dropdown-menu.show').forEach(function (menu) {
+                        if (menu !== dropdownMenu) menu.classList.remove('show');
+                    });
+                    dropdownMenu.classList.toggle('show');
+                });
+            });
+
+            // Dropdown dışına tıklanınca kapat
+            document.addEventListener('click', function (e) {
+                if (!e.target.matches('[data-toggle="dropdown"]')) {
+                    document.querySelectorAll('.dropdown-menu.show').forEach(function (menu) {
+                        menu.classList.remove('show');
+                    });
+                }
+            });
+        });
+    </script>
     <script src="lib/easing/easing.min.js"></script>
 </body>
 

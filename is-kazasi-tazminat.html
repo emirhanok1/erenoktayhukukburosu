@@ -35,13 +35,54 @@
     <!-- Template Stylesheet -->
     <link href="css/style.min.css" rel="stylesheet">
 
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Ana Sayfa",
+          "item": "https://www.erenoktay.av.tr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "İş Kazası Tazminat Hesaplama",
+          "item": "https://www.erenoktay.av.tr/is-kazasi-tazminat.html"
+        }
+      ]
+    }
+    </script>
+
     <style>
+        /* CRITICAL FIX: Prevent horizontal overflow that causes auto-zoom */
+        html {
+            overflow-x: hidden;
+        }
+
+        body {
+            overflow-x: hidden;
+            max-width: 100vw;
+        }
+
+        /* Ensure all containers respect viewport width */
+        .container,
+        .container-fluid,
+        .row {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
         .form-section {
             background: #f9f9f9;
             padding: 25px;
             border-radius: 8px;
             margin-bottom: 25px;
             border-left: 5px solid #aa9166;
+            max-width: 100%;
         }
 
         .form-section h5 {
@@ -63,6 +104,8 @@
             margin-top: 30px;
             color: #ffffff;
             box-shadow: 0 8px 20px rgba(170, 145, 102, 0.3);
+            max-width: 100%;
+            overflow-wrap: break-word;
         }
 
         .result-card h3 {
@@ -77,6 +120,7 @@
             justify-content: space-between;
             padding: 12px 0;
             border-bottom: 1px solid #444;
+            flex-wrap: wrap;
         }
 
         .result-row:last-child {
@@ -101,8 +145,9 @@
             border-radius: 8px;
             text-align: center;
             margin-top: 20px;
-            font-size: 1.8em;
+            font-size: clamp(1.2em, 4vw, 1.8em);
             font-weight: 800;
+            word-wrap: break-word;
         }
 
         .info-box {
@@ -111,6 +156,7 @@
             padding: 15px;
             margin: 20px 0;
             border-radius: 4px;
+            max-width: 100%;
         }
 
         .warning-box {
@@ -119,6 +165,19 @@
             padding: 15px;
             margin: 20px 0;
             border-radius: 4px;
+            max-width: 100%;
+        }
+
+        /* Prevent iOS auto-zoom on input focus */
+        .form-control {
+            max-width: 100%;
+            font-size: 16px;
+        }
+
+        /* Prevent layout shift from form-row */
+        .form-row {
+            margin-right: 0;
+            margin-left: 0;
         }
     </style>
 </head>
@@ -224,7 +283,7 @@
         <div class="contact">
             <div class="container">
                 <div class="section-header">
-                    <h2>İş Kazası Maddi Tazminat Hesaplama</h2>
+                    <h1>İş Kazası Maddi Tazminat Hesaplama</h1>
                     <p>Yargıtay standartları ve TRH-2010 yaşam tablosu ile profesyonel tazminat tahmini.</p>
                 </div>
 
@@ -433,7 +492,7 @@
                                     <p><i class="fa fa-map-marker-alt"></i>Aşağı Öveçler Mah. 1331. Cad. No: 3/3
                                         Çankaya/Ankara</p>
                                     <p><i class="fa fa-phone-alt"></i>0507 400 71 40</p>
-                                    <p><i class="fa fa-envelope"></i>info@erenoktay.av.tr</p>
+                                    <p><i class="fa fa-envelope"></i>av.eren.oktay@gmail.com</p>
                                     <div class="footer-social">
                                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                                         <a href="#"><i class="fab fa-instagram"></i></a>
@@ -662,6 +721,40 @@
             document.getElementById('maasAlani').style.display = 'block';
             document.getElementById('asgariUcretKullan').checked = false;
         }
+    </script>
+
+    <!-- Vanilla JS Bootstrap Replacement (Navbar & Dropdown) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // 1. Navbar Toggle
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            const navbarCollapse = document.querySelector('#navbarCollapse');
+            if (navbarToggler && navbarCollapse) {
+                navbarToggler.addEventListener('click', function () {
+                    navbarCollapse.classList.toggle('show');
+                });
+            }
+            // 2. Dropdown Menü
+            const dropdownToggles = document.querySelectorAll('[data-toggle="dropdown"]');
+            dropdownToggles.forEach(function (toggle) {
+                toggle.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const dropdownMenu = this.nextElementSibling;
+                    document.querySelectorAll('.dropdown-menu.show').forEach(function (menu) {
+                        if (menu !== dropdownMenu) menu.classList.remove('show');
+                    });
+                    dropdownMenu.classList.toggle('show');
+                });
+            });
+            // 3. Dropdown dışı tıklama
+            document.addEventListener('click', function (e) {
+                if (!e.target.matches('[data-toggle="dropdown"]')) {
+                    document.querySelectorAll('.dropdown-menu.show').forEach(function (menu) {
+                        menu.classList.remove('show');
+                    });
+                }
+            });
+        });
     </script>
 </body>
 

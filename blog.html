@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 
 <head>
     <meta charset="utf-8">
-    <title>Kanun - Law Firm Website Template</title>
+    <title>Duyurular | Av. Eren Oktay Hukuk Bürosu - Güncel Hukuki Gelişmeler</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Law Firm Website Template" name="keywords">
-    <meta content="Law Firm Website Template" name="description">
+    <meta name="keywords" content="hukuk duyuruları, Ankara avukat, güncel hukuki gelişmeler, Av. Eren Oktay">
+    <meta name="description"
+        content="Av. Eren Oktay Hukuk Bürosu duyuruları. Güncel hukuki gelişmeler, yargı kararları ve büromuzla ilgili haberler.">
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
@@ -24,8 +25,6 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;1,400&display=swap"
         rel="stylesheet">
 
-
-
     <!-- CSS Libraries -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -34,6 +33,28 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.min.css" rel="stylesheet">
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Ana Sayfa",
+          "item": "https://www.erenoktay.av.tr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Duyurular",
+          "item": "https://www.erenoktay.av.tr/blog.html"
+        }
+      ]
+    }
+    </script>
 </head>
 
 <body>
@@ -118,7 +139,6 @@
         </div>
         <!-- Nav Bar End -->
 
-
         <!-- Page Header Start -->
         <div class="page-header">
             <div class="container">
@@ -135,12 +155,11 @@
         </div>
         <!-- Page Header End -->
 
-
         <!-- Blog Start -->
         <div class="blog">
             <div class="container">
                 <div class="section-header">
-                    <h2>Duyurular</h2>
+                    <h1>Duyurular ve Güncel Gelişmeler</h1>
                 </div>
 
                 <!-- Dynamic Content Container -->
@@ -278,10 +297,6 @@
             });
         </script>
 
-
-
-
-
         <!-- Footer Start -->
         <div class="footer">
             <div class="container">
@@ -311,8 +326,6 @@
                                     <h2>Hızlı Erişim</h2>
                                     <a href="about.html">Hakkımızda</a>
                                     <a href="service.html">Hizmetler</a>
-
-
                                     <a href="contact.html">İletişim</a>
                                 </div>
                             </div>
@@ -322,13 +335,10 @@
                                     <p><i class="fa fa-map-marker-alt"></i>Aşağı Öveçler Mah. 1331. Cad. No: 3/3
                                         Çankaya/Ankara</p>
                                     <p><i class="fa fa-phone-alt"></i>0507 400 71 40</p>
-                                    <p><i class="fa fa-envelope"></i>info@erenoktay.av.tr</p>
+                                    <p><i class="fa fa-envelope"></i>av.eren.oktay@gmail.com</p>
                                     <div class="footer-social">
-
                                         <a href="#"><i class="fab fa-facebook-f"></i></a>
-
                                         <a href="#"><i class="fab fa-instagram"></i></a>
-
                                     </div>
                                 </div>
                             </div>
@@ -365,6 +375,90 @@
 
     <!-- Template Javascript -->
     <script src="js/main.min.js"></script>
+
+    <!-- Supabase Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase-config.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async function () {
+            const container = document.getElementById('blogContainer');
+            const loading = document.getElementById('loadingState');
+            const emptyState = document.getElementById('emptyState');
+
+            try {
+                const { data, error } = await supabaseClient
+                    .from('announcements')
+                    .select('*')
+                    .eq('is_active', true)
+                    .order('created_at', { ascending: false });
+
+                if (error) throw error;
+
+                loading.style.display = 'none';
+
+                if (!data || data.length === 0) {
+                    container.style.display = 'none';
+                    emptyState.style.display = 'block';
+                    container.innerHTML = '';
+                    container.appendChild(emptyState);
+                    emptyState.style.display = 'block';
+                    return;
+                }
+
+                let html = '';
+                data.forEach(item => {
+                    const date = new Date(item.created_at).toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' });
+                    const imageUrl = item.image_url || 'img/blog-1.webp';
+                    const shortContent = item.content.substring(0, 100) + '...';
+
+                    html += `
+                        <div class="col-lg-4 col-md-6 blog-item">
+                            <div class="blog-img">
+                                <img src="${imageUrl}" alt="${item.title}" style="height: 200px; object-fit: cover; width: 100%;" loading="lazy">
+                            </div>
+                            <div class="blog-meta">
+                                <i class="fa fa-list-alt"></i>
+                                <a href="#">${item.category}</a>
+                                <i class="fa fa-calendar-alt"></i>
+                                <p>${date}</p>
+                            </div>
+                            <div class="blog-text">
+                                <h3><a href="#" onclick="openModal('${item.id}')">${item.title}</a></h3>
+                                <p>${shortContent}</p>
+                                <a class="btn" href="#" onclick="openModal('${item.id}')">Detaylı Bilgi <i class="fa fa-angle-right"></i></a>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                container.innerHTML = html;
+
+                window.openModal = function (id) {
+                    const item = data.find(i => i.id === id);
+                    if (!item) return;
+
+                    document.getElementById('modalTitle').innerText = item.title;
+                    document.getElementById('modalContent').innerText = item.content;
+
+                    const img = document.getElementById('modalImage');
+                    if (item.image_url) {
+                        img.src = item.image_url;
+                        img.style.display = 'block';
+                    } else {
+                        img.style.display = 'none';
+                    }
+
+                    $('#dynamicModal').modal('show');
+                }
+
+            } catch (error) {
+                console.error('Error fetching blog:', error);
+                loading.style.display = 'none';
+                container.innerHTML = '<div class="col-12 text-center text-danger">Bağlantı hatası. Lütfen daha sonra tekrar deneyiniz.</div>';
+            }
+        });
+    </script>
 </body>
 
 </html>

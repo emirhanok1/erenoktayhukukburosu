@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 
 <head>
     <meta charset="utf-8">
-    <title>Kanun - Law Firm Website Template</title>
+    <title>Hukuk Makaleleri ve Detaylar | Av. Eren Oktay</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Law Firm Website Template" name="keywords">
-    <meta content="Law Firm Website Template" name="description">
+    <meta name="keywords" content="hukuk makalesi, hukuki bilgilendirme, Av. Eren Oktay, Ankara avukat">
+    <meta name="description" content="Av. Eren Oktay Hukuk Bürosu makale detayları ve hukuki bilgilendirme sayfası.">
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
@@ -34,6 +34,28 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.min.css" rel="stylesheet">
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Ana Sayfa",
+          "item": "https://www.erenoktay.av.tr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Makale Detayı",
+          "item": "https://www.erenoktay.av.tr/single.html"
+        }
+      ]
+    }
+    </script>
 </head>
 
 <body>
@@ -144,7 +166,8 @@
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <img class="img-fluid rounded" src="img/single.webp" alt="Image" loading="lazy">
+                        <img class="img-fluid rounded" src="img/single.webp" alt="Hukuk Makalesi Görseli"
+                            loading="lazy">
                         <h1>Makale Başlığı</h1>
                         <p>
                             Hukuki süreçler hakkında genel bilgilendirme metni. Av. Eren Oktay Hukuk Bürosu olarak,
@@ -247,7 +270,7 @@
                                     <p><i class="fa fa-map-marker-alt"></i>Aşağı Öveçler Mah. 1331. Cad. No: 3/3
                                         Çankaya/Ankara</p>
                                     <p><i class="fa fa-phone-alt"></i>0507 400 71 40</p>
-                                    <p><i class="fa fa-envelope"></i>info@erenoktay.av.tr</p>
+                                    <p><i class="fa fa-envelope"></i>av.eren.oktay@gmail.com</p>
                                     <div class="footer-social">
 
                                         <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -283,13 +306,42 @@
         <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
     </div>
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-
     <!-- Template Javascript -->
     <script src="js/main.min.js"></script>
+
+    <!-- Vanilla JS Bootstrap Replacement (Navbar & Dropdown) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // 1. Navbar Toggle
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            const navbarCollapse = document.querySelector('#navbarCollapse');
+            if (navbarToggler && navbarCollapse) {
+                navbarToggler.addEventListener('click', function () {
+                    navbarCollapse.classList.toggle('show');
+                });
+            }
+            // 2. Dropdown Menü
+            const dropdownToggles = document.querySelectorAll('[data-toggle="dropdown"]');
+            dropdownToggles.forEach(function (toggle) {
+                toggle.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const dropdownMenu = this.nextElementSibling;
+                    document.querySelectorAll('.dropdown-menu.show').forEach(function (menu) {
+                        if (menu !== dropdownMenu) menu.classList.remove('show');
+                    });
+                    dropdownMenu.classList.toggle('show');
+                });
+            });
+            // 3. Dropdown dışı tıklama
+            document.addEventListener('click', function (e) {
+                if (!e.target.matches('[data-toggle="dropdown"]')) {
+                    document.querySelectorAll('.dropdown-menu.show').forEach(function (menu) {
+                        menu.classList.remove('show');
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
