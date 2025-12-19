@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="tr">
 
 <head>
@@ -27,7 +27,7 @@
         rel="stylesheet">
 
     <!-- CSS Libraries -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="lib/animate/animate.min.css" rel="stylesheet">
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
@@ -80,16 +80,16 @@
             <div class="container-fluid">
                 <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
                     <a href="#" class="navbar-brand">MENU</a>
-                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                        <div class="navbar-nav mr-auto">
+                        <div class="navbar-nav me-auto">
                             <a href="index.html" class="nav-item nav-link">Ana Sayfa</a>
                             <a href="about.html" class="nav-item nav-link">Hakkımızda</a>
                             <div class="nav-item dropdown">
-                                <a href="service.html" class="nav-link dropdown-toggle" data-toggle="dropdown">Uzmanlık
+                                <a href="service.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Uzmanlık
                                     Alanları</a>
                                 <div class="dropdown-menu">
                                     <a href="service.html#ceza" class="dropdown-item">Ceza Hukuku</a>
@@ -99,7 +99,7 @@
                                 </div>
                             </div>
                             <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Araçlar</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Araçlar</a>
                                 <div class="dropdown-menu">
                                     <a href="infaz-hesaplama.html" class="dropdown-item">İnfaz Hesaplama</a>
                                     <a href="is-kazasi-tazminat.html" class="dropdown-item">İş Kazası Tazminat</a>
@@ -108,7 +108,7 @@
                             <a href="blog.html" class="nav-item nav-link">Duyurular</a>
                             <a href="contact.html" class="nav-item nav-link">Bize Ulaşın</a>
                         </div>
-                        <div class="ml-auto">
+                        <div class="ms-auto">
                             <a class="btn" href="contact.html">Randevu Al</a>
                         </div>
                     </div>
@@ -145,7 +145,7 @@
                         <p class="mb-4" style="font-size: 18px; color: #666;">Üzgünüz, ulaşmaya çalıştığınız sayfa
                             silinmiş, taşınmış veya adresi değişmiş olabilir.</p>
                         <a class="btn" href="index.html">Ana Sayfaya Dön</a>
-                        <a class="btn btn-secondary ml-3" href="contact.html">Bize Ulaşın</a>
+                        <a class="btn btn-secondary ms-3" href="contact.html">Bize Ulaşın</a>
                     </div>
                 </div>
             </div>
@@ -219,10 +219,13 @@
         <!-- Footer End -->
 
         <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+        <a href="https://wa.me/905074007140" class="whatsapp-float" target="_blank" aria-label="WhatsApp ile Ä°letiÅŸim">
+            <i class="fab fa-whatsapp"></i>
+        </a>
     </div>
 
     <!-- JavaScript Libraries -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="lib/easing/easing.min.js"></script>
 
     <!-- Template Javascript -->
@@ -240,7 +243,7 @@
                 });
             }
             // 2. Dropdown Menü
-            const dropdownToggles = document.querySelectorAll('[data-toggle="dropdown"]');
+            const dropdownToggles = document.querySelectorAll('[data-bs-toggle="dropdown"]');
             dropdownToggles.forEach(function (toggle) {
                 toggle.addEventListener('click', function (e) {
                     e.preventDefault();
@@ -253,7 +256,7 @@
             });
             // 3. Dropdown dışı tıklama
             document.addEventListener('click', function (e) {
-                if (!e.target.matches('[data-toggle="dropdown"]')) {
+                if (!e.target.matches('[data-bs-toggle="dropdown"]')) {
                     document.querySelectorAll('.dropdown-menu.show').forEach(function (menu) {
                         menu.classList.remove('show');
                     });
