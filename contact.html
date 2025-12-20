@@ -74,16 +74,16 @@
       "email": "av.eren.oktay@gmail.com",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Aşağı Öveçler Mah. 1331. Cad. No: 3/3",
+        "streetAddress": "Aşağı Öveçler Mah. 1331. Sk. 3/3",
         "addressLocality": "Çankaya",
         "addressRegion": "Ankara",
-        "postalCode": "06460",
+        "postalCode": "06539",
         "addressCountry": "TR"
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": "39.893264",
-        "longitude": "32.815266"
+        "latitude": "39.893822",
+        "longitude": "32.826428"
       },
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
@@ -215,21 +215,21 @@
                                     <i class="fa fa-map-marker-alt"></i>
                                     <div class="contact-text">
                                         <h2>Adres</h2>
-                                        <p>Aşağı Öveçler Mah. 1331. Cad. No: 3/3 Çankaya/Ankara</p>
+                                        <p data-office-address>Aşağı Öveçler Mah. 1331. Sk. 3/3 Çankaya/Ankara</p>
                                     </div>
                                 </div>
                                 <div class="contact-item">
                                     <i class="fa fa-phone-alt"></i>
                                     <div class="contact-text">
                                         <h2>Telefon</h2>
-                                        <p>0507 400 71 40</p>
+                                        <p data-office-phone>0507 400 71 40</p>
                                     </div>
                                 </div>
                                 <div class="contact-item">
                                     <i class="fa fa-envelope"></i>
                                     <div class="contact-text">
                                         <h2>E-posta</h2>
-                                        <p>av.eren.oktay@gmail.com</p>
+                                        <p data-office-email>av.eren.oktay@gmail.com</p>
                                     </div>
                                 </div>
                             </div>
@@ -273,13 +273,12 @@
                             </div>
                             <div class="mb-3 text-center">
                                 <a href="https://maps.app.goo.gl/KWbv9mHv4iGEZH4d7" target="_blank"
-                                    rel="noopener noreferrer" class="btn"
+                                    rel="noopener noreferrer" class="btn" data-google-maps-link
                                     style="background: #0b2d71; color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; display: inline-block;">
                                     <i class="fa fa-map-marker-alt mr-2"></i>Google Maps'te Aç
                                 </a>
                             </div>
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3060.038753267592!2d32.81266631565576!3d39.89326497942917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d34f40076a591b%3A0xe6786c6731976212!2sA%C5%9Fa%C4%9F%C4%9F%C4%B1%20%C3%96ve%C3%A7ler%2C%201331.%20Cd.%20No%3A3%2C%2006460%20%C3%87ankaya%2FAnkara!5e0!3m2!1str!2str!4v1672927238234!5m2!1str!2str"
+                            <iframe src="https://maps.google.com/maps?q=39.893822,32.826428&z=17&output=embed"
                                 width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                                 referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
@@ -291,21 +290,22 @@
                             <h2 class="text-center mb-4" style="color: #0b2d71; font-weight: 600;">OFİSİMİZDEN
                                 GÖRÜNTÜLER
                             </h2>
-                            <p class="text-center mb-4" style="color: #666;">Ankara Çankaya'da bulunan modern ofisimizde
-                                sizi ağırlamaktan mutluluk duyarız.</p>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-4 mb-3">
                             <img src="img/ofis-1.webp" alt="Ankara Hukuk Bürosu Ofis - İç Mekan" class="img-fluid"
+                                data-office-image="1"
                                 style="border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
                         </div>
                         <div class="col-md-4 mb-3">
                             <img src="img/ofis-2.webp" alt="Avukatlık Ofisi Toplantı Odası - Ankara" class="img-fluid"
+                                data-office-image="2"
                                 style="border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
                         </div>
                         <div class="col-md-4 mb-3">
                             <img src="img/ofis-3.webp" alt="Hukuk Bürosu Çalışma Alanı - Çankaya" class="img-fluid"
+                                data-office-image="3"
                                 style="border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
                         </div>
                     </div>
@@ -350,7 +350,7 @@
                                 <div class="col-md-6 col-lg-4">
                                     <div class="footer-contact">
                                         <h2>İletişim Bilgileri</h2>
-                                        <p><i class="fa fa-map-marker-alt"></i>Aşağı Öveçler Mah. 1331. Cad. No: 3/3
+                                        <p><i class="fa fa-map-marker-alt"></i>Aşağı Öveçler Mah. 1331. Sk. 3/3
                                             Çankaya/Ankara</p>
                                         <p><i class="fa fa-phone-alt"></i>0507 400 71 40</p>
                                         <p><i class="fa fa-envelope"></i>av.eren.oktay@gmail.com</p>
@@ -391,7 +391,9 @@
         </footer>
 
         <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-    <a href="https://wa.me/905074007140" target="_blank" class="whatsapp-btn" style="position: fixed; bottom: 20px; left: 20px; background-color: rgb(37, 211, 102); color: white; width: 60px; height: 60px; border-radius: 50%; text-align: center; line-height: 60px; font-size: 30px; box-shadow: rgba(0, 0, 0, 0.3) 2px 2px 10px; z-index: 10000000; transition: 0.3s;"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://wa.me/905074007140" target="_blank" class="whatsapp-btn"
+            style="position: fixed; bottom: 20px; left: 20px; background-color: rgb(37, 211, 102); color: white; width: 60px; height: 60px; border-radius: 50%; text-align: center; line-height: 60px; font-size: 30px; box-shadow: rgba(0, 0, 0, 0.3) 2px 2px 10px; z-index: 10000000; transition: 0.3s;"><i
+                class="fab fa-whatsapp"></i></a>
     </div>
 
     <!-- JavaScript Libraries -->
@@ -406,6 +408,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="js/supabase-config.js"></script>
     <script src="js/contact-form.js"></script>
+    <script src="js/contact-dynamic.js"></script>
 </body>
 
 </html>

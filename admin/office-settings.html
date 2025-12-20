@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Ofis Ayarları - Yönetim Paneli</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">YÖNETİM PANELİ</div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Duyuru Ekle -->
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-fw fa-edit"></i>
+                    <span>Duyuru Yönetimi</span></a>
+            </li>
+
+            <!-- Nav Item - Gelen Kutusu -->
+            <li class="nav-item">
+                <a class="nav-link" href="messages.html">
+                    <i class="fas fa-fw fa-envelope"></i>
+                    <span>Gelen Kutusu</span></a>
+            </li>
+
+            <!-- Nav Item - Asgari Ücret -->
+            <li class="nav-item">
+                <a class="nav-link" href="wages.html">
+                    <i class="fas fa-fw fa-money-bill-wave"></i>
+                    <span>Asgari Ücret Yönetimi</span></a>
+            </li>
+
+            <!-- Nav Item - Ofis Ayarları -->
+            <li class="nav-item active">
+                <a class="nav-link" href="office-settings.html">
+                    <i class="fas fa-fw fa-building"></i>
+                    <span>Ofis Ayarları</span></a>
+            </li>
+
+            <!-- Nav Item - Duyuru Listesi -->
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-fw fa-list"></i>
+                    <span>Duyuru Listesi</span></a>
+            </li>
+
+            <!-- Nav Item - Siteye Dön -->
+            <li class="nav-item">
+                <a class="nav-link" href="../index.html">
+                    <i class="fas fa-fw fa-globe"></i>
+                    <span>Siteye Dön</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <div class="topbar-divider d-none d-sm-block"></div>
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Av. Eren Oktay</span>
+                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Ofis Bilgileri ve İletişim Ayarları</h1>
+                    </div>
+
+                    <!-- Alert Messages -->
+                    <div id="alertContainer"></div>
+
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <!-- Office Information Card -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Ofis Bilgileri</h6>
+                                </div>
+                                <div class="card-body">
+                                    <form id="officeForm">
+                                        <div class="form-group">
+                                            <label for="address">Adres</label>
+                                            <input type="text" class="form-control" id="address"
+                                                placeholder="Örn: Aşağı Öveçler Mah. 1331. Sk. 3/3">
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="district">İlçe</label>
+                                                    <input type="text" class="form-control" id="district"
+                                                        placeholder="Örn: Çankaya">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="city">İl</label>
+                                                    <input type="text" class="form-control" id="city"
+                                                        placeholder="Örn: Ankara">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="postalCode">Posta Kodu</label>
+                                                    <input type="text" class="form-control" id="postalCode"
+                                                        placeholder="Örn: 06539">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="latitude">Enlem (Latitude)</label>
+                                                    <input type="text" class="form-control" id="latitude"
+                                                        placeholder="39.893822">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="longitude">Boylam (Longitude)</label>
+                                                    <input type="text" class="form-control" id="longitude"
+                                                        placeholder="32.826428">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="phone">Telefon</label>
+                                                    <input type="text" class="form-control" id="phone"
+                                                        placeholder="0507 400 71 40">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="email">E-posta</label>
+                                                    <input type="email" class="form-control" id="email"
+                                                        placeholder="av.eren.oktay@gmail.com">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="googleMapsUrl">Google Maps URL</label>
+                                            <input type="text" class="form-control" id="googleMapsUrl"
+                                                placeholder="https://maps.app.goo.gl/...">
+                                            <small class="form-text text-muted">Google Maps'ten "Paylaş" butonundan
+                                                linki alabilirsiniz.</small>
+                                        </div>
+
+                                        <button type="submit" class="btn btn-primary btn-block">
+                                            <i class="fas fa-save"></i> Değişiklikleri Kaydet
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <!-- Office Gallery Card -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Ofis Görselleri</h6>
+                                </div>
+                                <div class="card-body">
+                                    <p class="mb-3 text-muted">Her bir görsele tıklayarak değiştirebilirsiniz. Görseller
+                                        "Ofisimizden Görüntüler" bölümünde gösterilecektir.</p>
+
+                                    <div class="row">
+                                        <!-- Image 1 -->
+                                        <div class="col-md-4 mb-3">
+                                            <div class="office-image-container" data-slot="1">
+                                                <img id="officeImage1" src="../img/ofis-1.webp"
+                                                    class="img-fluid rounded"
+                                                    style="cursor: pointer; min-height: 200px; object-fit: cover; width: 100%;"
+                                                    alt="Ofis Görseli 1">
+                                                <div class="overlay">
+                                                    <i class="fas fa-camera fa-2x"></i>
+                                                    <p class="mt-2">Değiştirmek için tıklayın</p>
+                                                </div>
+                                            </div>
+                                            <input type="file" id="imageInput1" accept="image/*" style="display: none;">
+                                        </div>
+
+                                        <!-- Image 2 -->
+                                        <div class="col-md-4 mb-3">
+                                            <div class="office-image-container" data-slot="2">
+                                                <img id="officeImage2" src="../img/ofis-2.webp"
+                                                    class="img-fluid rounded"
+                                                    style="cursor: pointer; min-height: 200px; object-fit: cover; width: 100%;"
+                                                    alt="Ofis Görseli 2">
+                                                <div class="overlay">
+                                                    <i class="fas fa-camera fa-2x"></i>
+                                                    <p class="mt-2">Değiştirmek için tıklayın</p>
+                                                </div>
+                                            </div>
+                                            <input type="file" id="imageInput2" accept="image/*" style="display: none;">
+                                        </div>
+
+                                        <!-- Image 3 -->
+                                        <div class="col-md-4 mb-3">
+                                            <div class="office-image-container" data-slot="3">
+                                                <img id="officeImage3" src="../img/ofis-3.webp"
+                                                    class="img-fluid rounded"
+                                                    style="cursor: pointer; min-height: 200px; object-fit: cover; width: 100%;"
+                                                    alt="Ofis Görseli 3">
+                                                <div class="overlay">
+                                                    <i class="fas fa-camera fa-2x"></i>
+                                                    <p class="mt-2">Değiştirmek için tıklayın</p>
+                                                </div>
+                                            </div>
+                                            <input type="file" id="imageInput3" accept="image/*" style="display: none;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Map Preview Card -->
+                        <div class="col-lg-4">
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Harita Önizleme</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div id="mapPreview">
+                                        <iframe id="mapIframe" width="100%" height="300" style="border:0;"
+                                            allowfullscreen="" loading="lazy"
+                                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                    </div>
+                                    <small class="text-muted mt-2 d-block">Koordinatları değiştirdiğinizde harita
+                                        otomatik güncellenecektir.</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Oktay Hukuk Bürosu 2025</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Supabase JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabase-config.js"></script>
+    <script src="js/auth-check.js"></script>
+    <script src="js/office-settings.js"></script>
+
+    <style>
+        .office-image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.35rem;
+        }
+
+        .office-image-container .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .office-image-container:hover .overlay {
+            opacity: 1;
+        }
+
+        .office-image-container img {
+            transition: transform 0.3s;
+        }
+
+        .office-image-container:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+</body>
+
+</html>

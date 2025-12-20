@@ -1699,7 +1699,7 @@ a:focus {
     position: relative;
     margin-top: 45px;
     padding-top: 180px;
-    background: #ffffff;
+    background: #0e1c36;
     color: #ffffff;
 }
 
@@ -1708,7 +1708,7 @@ a:focus {
 .footer .footer-contact {
     position: relative;
     margin-bottom: 45px;
-    color: #555555;
+    color: #ffffff;
 }
 
 .footer .footer-about h2,
@@ -1718,13 +1718,13 @@ a:focus {
     margin-bottom: 30px;
     font-size: 25px;
     font-weight: 600;
-    color: #0e1c36;
+    color: #d4af37;
 }
 
 .footer .footer-link a {
     display: block;
     margin-bottom: 10px;
-    color: #555555;
+    color: #ffffff;
     transition: .3s;
 }
 
@@ -1737,7 +1737,7 @@ a:focus {
 }
 
 .footer .footer-link a:hover {
-    color: #0e1c36;
+    color: #d4af37;
     letter-spacing: 1px;
 }
 
@@ -1757,7 +1757,7 @@ a:focus {
 .footer .footer-social a i {
     margin-right: 15px;
     font-size: 18px;
-    color: #0e1c36;
+    color: #d4af37;
 }
 
 .footer .footer-social a:last-child i {
@@ -1765,19 +1765,19 @@ a:focus {
 }
 
 .footer .footer-social a:hover i {
-    color: #555555;
+    color: #ffffff;
 }
 
 .footer .footer-menu .f-menu {
     position: relative;
     padding: 15px 0;
-    background: #ffffff;
+    background: #0b162b;
     font-size: 0;
     text-align: center;
 }
 
 .footer .footer-menu .f-menu a {
-    color: #555555;
+    color: #ffffff;
     font-size: 16px;
     margin-right: 15px;
     padding-right: 15px;
@@ -1785,7 +1785,7 @@ a:focus {
 }
 
 .footer .footer-menu .f-menu a:hover {
-    color: #0e1c36;
+    color: #d4af37;
 }
 
 .footer .footer-menu .f-menu a:last-child {
@@ -1797,11 +1797,12 @@ a:focus {
 
 .footer .copyright {
     padding: 30px 15px;
+    background: #0b162b;
 }
 
 .footer .copyright p {
     margin: 0;
-    color: #555555;
+    color: #ffffff;
 }
 
 .footer .copyright .col-md-6:last-child p {
@@ -1809,7 +1810,7 @@ a:focus {
 }
 
 .footer .copyright p a {
-    color: #0e1c36;
+    color: #d4af37;
     font-weight: 500;
     letter-spacing: 1px;
 }
