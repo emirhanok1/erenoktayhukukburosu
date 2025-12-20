@@ -406,10 +406,12 @@
                                 <div class="col-md-6 col-lg-4">
                                     <div class="footer-contact">
                                         <h2>İletişim Bilgileri</h2>
-                                        <p><i class="fa fa-map-marker-alt"></i>Aşağı Öveçler Mah. 1331. Cad. No: 3/3
-                                            Çankaya/Ankara</p>
-                                        <p><i class="fa fa-phone-alt"></i>0507 400 71 40</p>
-                                        <p><i class="fa fa-envelope"></i>av.eren.oktay@gmail.com</p>
+                                        <p><i class="fa fa-map-marker-alt"></i><span data-office-address>Aşağı Öveçler
+                                                Mah. 1331. Sk. 3/3 Çankaya/Ankara</span></p>
+                                        <p><i class="fa fa-phone-alt"></i><span data-office-phone>0507 400 71 40</span>
+                                        </p>
+                                        <p><i class="fa fa-envelope"></i><span
+                                                data-office-email>av.eren.oktay@gmail.com</span></p>
                                         <div class="footer-social">
                                             <a href="#"><i class="fab fa-facebook-f"></i></a>
                                             <a href="#"><i class="fab fa-instagram"></i></a>
@@ -439,8 +441,10 @@
             </div>
             <!-- Footer End -->
             <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-    <a href="https://wa.me/905074007140" target="_blank" class="whatsapp-btn" style="position: fixed; bottom: 20px; left: 20px; background-color: rgb(37, 211, 102); color: white; width: 60px; height: 60px; border-radius: 50%; text-align: center; line-height: 60px; font-size: 30px; box-shadow: rgba(0, 0, 0, 0.3) 2px 2px 10px; z-index: 10000000; transition: 0.3s;"><i class="fab fa-whatsapp"></i></a>
-            
+            <a href="https://wa.me/905074007140" target="_blank" class="whatsapp-btn"
+                style="position: fixed; bottom: 20px; left: 20px; background-color: rgb(37, 211, 102); color: white; width: 60px; height: 60px; border-radius: 50%; text-align: center; line-height: 60px; font-size: 30px; box-shadow: rgba(0, 0, 0, 0.3) 2px 2px 10px; z-index: 10000000; transition: 0.3s;"><i
+                    class="fab fa-whatsapp"></i></a>
+
         </footer>
     </div>
 
@@ -453,6 +457,11 @@
 
     <!-- Template Javascript -->
     <script src="js/main.min.js"></script>
+
+    <!-- Supabase & Dynamic Content -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase-config.js"></script>
+    <script src="js/contact-dynamic.js"></script>
 </body>
 
 </html>
