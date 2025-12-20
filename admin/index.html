@@ -193,7 +193,7 @@
 
                                                 <!-- Hidden Input -->
                                                 <input type="file" id="coverImage" style="display: none;"
-                                                    accept="image/*">
+                                                    accept="image/webp">
                                             </div>
                                         </div>
 
@@ -320,6 +320,10 @@
             $('#coverImage').on('change', function (e) {
                 const file = e.target.files[0];
                 if (file) {
+                    if (file.type !== 'image/webp') {
+                        alert("Lütfen sadece .webp uzantılı görsel seçiniz!");
+                        return;
+                    }
                     const reader = new FileReader();
                     reader.onload = function (e) {
                         $('#imagePreview').attr('src', e.target.result).show();
@@ -607,8 +611,8 @@
                             const ctx = canvas.getContext('2d');
                             ctx.drawImage(img, 0, 0, width, height);
 
-                            // Convert to Base64 with compression (0.8 quality for JPEG)
-                            const base64 = canvas.toDataURL('image/jpeg', 0.8);
+                            // Convert to Base64 with compression (0.8 quality for WebP)
+                            const base64 = canvas.toDataURL('image/webp', 0.8);
                             resolve(base64);
                         };
                         img.onerror = reject;
