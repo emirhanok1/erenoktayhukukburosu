@@ -1,0 +1,211 @@
+/**********************************/
+/****** Cookie Consent CSS ********/
+/**********************************/
+
+/* Cookie Consent Banner */
+.cookie-consent-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, #0e1c36 0%, #1a2d4d 100%);
+    color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+    z-index: 999999;
+    transform: translateY(100%);
+    transition: transform 0.4s ease-in-out;
+    border-top: 3px solid #d4af37;
+}
+
+.cookie-consent-banner.show {
+    transform: translateY(0);
+}
+
+.cookie-consent-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.cookie-consent-text {
+    flex: 1;
+}
+
+.cookie-consent-text p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #ffffff;
+}
+
+.cookie-consent-text a {
+    color: #d4af37;
+    text-decoration: underline;
+}
+
+.cookie-consent-text a:hover {
+    color: #aa9166;
+}
+
+.cookie-consent-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.cookie-btn {
+    padding: 10px 25px;
+    font-size: 14px;
+    font-weight: 600;
+    border: 2px solid;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.cookie-btn-accept {
+    background: #d4af37;
+    color: #0e1c36;
+    border-color: #d4af37;
+}
+
+.cookie-btn-accept:hover {
+    background: #aa9166;
+    border-color: #aa9166;
+    transform: translateY(-2px);
+}
+
+.cookie-btn-reject {
+    background: transparent;
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+.cookie-btn-reject:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Map Cookie Placeholder */
+.map-cookie-placeholder {
+    background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+    border: 2px dashed #d4af37;
+    border-radius: 8px;
+    padding: 60px 40px;
+    text-align: center;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.map-cookie-placeholder i {
+    font-size: 60px;
+    color: #0e1c36;
+    margin-bottom: 20px;
+}
+
+.map-cookie-placeholder h3 {
+    color: #0e1c36;
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.map-cookie-placeholder p {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 25px;
+    max-width: 500px;
+}
+
+.map-cookie-btn {
+    padding: 12px 30px;
+    background: #d4af37;
+    color: #0e1c36;
+    border: 2px solid #d4af37;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.map-cookie-btn:hover {
+    background: #aa9166;
+    border-color: #aa9166;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+}
+
+/* Cookie Settings Link */
+.cookie-settings-link {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(14, 28, 54, 0.9);
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 13px;
+    cursor: pointer;
+    z-index: 999998;
+    transition: all 0.3s ease;
+    border: 1px solid #d4af37;
+}
+
+.cookie-settings-link:hover {
+    background: #0e1c36;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.cookie-settings-link i {
+    margin-right: 5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .cookie-consent-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cookie-consent-buttons {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .cookie-btn {
+        width: 100%;
+    }
+
+    .map-cookie-placeholder {
+        padding: 40px 20px;
+        min-height: 300px;
+    }
+
+    .map-cookie-placeholder h3 {
+        font-size: 20px;
+    }
+
+    .map-cookie-placeholder p {
+        font-size: 14px;
+    }
+
+    .cookie-settings-link {
+        left: 10px;
+        bottom: 90px;
+        /* Above WhatsApp button */
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+}

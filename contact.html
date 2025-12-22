@@ -39,6 +39,7 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.min.css" rel="stylesheet">
+    <link href="css/cookie-consent.css" rel="stylesheet">
 
     <!-- Breadcrumb Schema -->
     <script type="application/ld+json">
@@ -278,9 +279,9 @@
                                     <i class="fa fa-map-marker-alt mr-2"></i>Google Maps'te Aç
                                 </a>
                             </div>
-                            <iframe src="https://maps.google.com/maps?q=39.893822,32.826428&z=17&output=embed"
-                                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <div data-cookie-map
+                                data-map-src="https://maps.google.com/maps?q=39.893822,32.826428&z=17&output=embed">
+                            </div>
                         </div>
                     </div>
 
@@ -403,6 +404,9 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <!-- Cookie Consent -->
+    <script src="js/cookie-consent.js"></script>
 
     <!-- Supabase Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
