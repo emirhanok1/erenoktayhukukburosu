@@ -1,16 +1,8 @@
 ﻿
 document.addEventListener("DOMContentLoaded", async function () {
 
-    // --- Back to Top Button ---
-    const backToTopBtn = document.querySelector('.back-to-top');
-
+    // --- Sticky Navbar ---
     window.addEventListener('scroll', function () {
-        if (window.scrollY > 200) {
-            if (backToTopBtn) backToTopBtn.style.display = 'block';
-        } else {
-            if (backToTopBtn) backToTopBtn.style.display = 'none';
-        }
-
         // --- Sticky Navbar ---
         const navBar = document.querySelector('.nav-bar');
         const carousel = document.querySelector('.carousel');
@@ -26,13 +18,6 @@ document.addEventListener("DOMContentLoaded", async function () {
             if (pageHeader) pageHeader.style.marginTop = "0";
         }
     });
-
-    if (backToTopBtn) {
-        backToTopBtn.addEventListener('click', function (e) {
-            e.preventDefault();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    }
 
     // --- Navbar Dropdown Hover (Desktop) ---
     const dropdowns = document.querySelectorAll('.navbar .dropdown');
@@ -186,23 +171,6 @@ document.addEventListener("DOMContentLoaded", async function () {
         });
     }
     if (!localStorage.getItem('cookieConsent_v3')) { setTimeout(showCookieBanner, 500); }
-
-        // --- WhatsApp ---
-    const whatsappBtn = document.createElement('a');
-    whatsappBtn.href = "https://wa.me/905074007140";
-    whatsappBtn.target = "_blank";
-    whatsappBtn.className = "whatsapp-btn";
-    whatsappBtn.innerHTML = '<i class="fab fa-whatsapp"></i>';
-    whatsappBtn.style.cssText = 
-        position: fixed; bottom: 20px; left: 20px;
-        background-color: #25D366; color: white; width: 60px; height: 60px;
-        border-radius: 50%; text-align: center; line-height: 60px; font-size: 30px;
-        box-shadow: 2px 2px 10px rgba(0,0,0,0.3); z-index: 10000000;
-        transition: all 0.3s ease;
-    ;
-    whatsappBtn.onmouseover = () => whatsappBtn.style.transform = 'scale(1.1)';
-    whatsappBtn.onmouseout = () => whatsappBtn.style.transform = 'scale(1)';
-    document.body.appendChild(whatsappBtn);
 
 }); // End DOMContentLoaded
 
