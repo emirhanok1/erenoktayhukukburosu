@@ -195,6 +195,44 @@ a:focus {
     .top-bar .social {
         display: none;
     }
+
+    .top-bar .logo h1 {
+        font-size: 26px;
+        line-height: 1.2;
+        white-space: normal;
+        word-wrap: break-word;
+    }
+
+    .top-bar .text {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .top-bar {
+        height: auto;
+        min-height: 70px;
+        padding: 10px 0;
+    }
+
+    .top-bar .logo {
+        padding: 10px 15px;
+    }
+
+    .top-bar .logo h1 {
+        font-size: 20px;
+        line-height: 1.3;
+    }
+
+    .top-bar .logo img {
+        height: 50px;
+        margin-right: 10px !important;
+    }
+
+    .top-bar .logo .navbar-brand {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
 
 
