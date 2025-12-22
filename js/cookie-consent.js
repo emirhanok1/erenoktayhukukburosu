@@ -80,19 +80,13 @@
                 <div class="cookie-consent-content">
                     <div class="cookie-consent-text">
                         <p>
-                            <strong>🍪 Çerez Bildirimi</strong><br>
-                            Web sitemizde deneyiminizi iyileştirmek için çerezler kullanıyoruz. 
-                            Çerezleri kabul ederek harita gibi özelliklere erişebilirsiniz. 
-                            Daha fazla bilgi için <a href="kvkk.html" target="_blank">KVKK Aydınlatma Metnimizi</a> inceleyebilirsiniz.
+                            Sitemizde deneyiminizi geliştirmek için çerezler kullanılmaktadır.
+                            <a href="kvkk.html" target="_blank">Gizlilik Politikası</a>
                         </p>
                     </div>
                     <div class="cookie-consent-buttons">
-                        <button class="cookie-btn cookie-btn-accept" id="acceptCookies">
-                            <i class="fas fa-check"></i> Kabul Et
-                        </button>
-                        <button class="cookie-btn cookie-btn-reject" id="rejectCookies">
-                            <i class="fas fa-times"></i> Reddet
-                        </button>
+                        <button class="cookie-btn cookie-btn-reject" id="rejectCookies">REDDET</button>
+                        <button class="cookie-btn cookie-btn-accept" id="acceptCookies">KABUL ET</button>
                     </div>
                 </div>
             `;
@@ -119,9 +113,6 @@
             if (!this.hasConsent()) {
                 this.showBanner();
             }
-
-            // Create settings link if not exists
-            this.createSettingsLink();
         },
 
         // Create settings link
