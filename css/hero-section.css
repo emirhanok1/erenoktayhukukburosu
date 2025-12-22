@@ -6,6 +6,7 @@
     width: 100%;
     height: 600px;
     overflow: hidden;
+    background-color: #0e1c36;
 }
 
 .hero-img {
@@ -19,6 +20,11 @@
     opacity: 0;
     transition: opacity 1s ease-in-out;
     z-index: 0;
+}
+
+/* First image is visible by default - no JavaScript needed */
+.hero-img:first-of-type {
+    opacity: 1;
 }
 
 .hero-img.active {
