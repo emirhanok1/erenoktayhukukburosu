@@ -74,12 +74,16 @@
                 return;
             }
 
-            // Optional: Verify user role/permissions here
-            // const user = session.user;
-            // if (!user || user.role !== 'admin') {
-            //     redirectToLogin('Yetkisiz erişim.');
-            //     return;
-            // }
+            // Verify user role/permissions - Only admin users can access
+            const user = session.user;
+            const userRole = user?.user_metadata?.role || user?.app_metadata?.role;
+
+            if (!user || userRole !== 'admin') {
+                console.warn('Access denied: User role is not admin. Role:', userRole);
+                await supabaseClient.auth.signOut();
+                redirectToLogin('Yetkisiz erişim. Bu alana sadece yöneticiler erişebilir.');
+                return;
+            }
 
             // Authentication successful - show content
             removeLoadingOverlay();
@@ -136,6 +140,58 @@
             // Page was loaded from cache (back button)
             checkAuth();
         }
+    });
+
+    // Proper Logout Handler - Intercept logout modal buttons
+    document.addEventListener('DOMContentLoaded', function () {
+        // Find logout modal and intercept the logout button
+        const logoutModal = document.getElementById('logoutModal');
+        if (logoutModal) {
+            const logoutBtn = logoutModal.querySelector('.modal-footer .btn-primary, .modal-footer a[href="login.html"]');
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', async function (e) {
+                    e.preventDefault();
+
+                    // Show loading state
+                    const originalText = this.innerHTML;
+                    this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Çıkış yapılıyor...';
+                    this.style.pointerEvents = 'none';
+
+                    try {
+                        // Properly sign out from Supabase
+                        if (typeof supabaseClient !== 'undefined') {
+                            await supabaseClient.auth.signOut();
+                            console.log('✅ Successfully signed out from Supabase');
+                        }
+
+                        // Clear any stored session data
+                        sessionStorage.clear();
+
+                        // Redirect to login
+                        window.location.href = 'login.html';
+
+                    } catch (error) {
+                        console.error('Logout error:', error);
+                        // Still redirect even if signOut fails
+                        window.location.href = 'login.html';
+                    }
+                });
+            }
+        }
+
+        // Also provide a global logout function for programmatic use
+        window.adminLogout = async function () {
+            try {
+                if (typeof supabaseClient !== 'undefined') {
+                    await supabaseClient.auth.signOut();
+                }
+                sessionStorage.clear();
+                window.location.href = 'login.html';
+            } catch (error) {
+                console.error('Logout error:', error);
+                window.location.href = 'login.html';
+            }
+        };
     });
 
 })();
