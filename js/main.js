@@ -136,42 +136,6 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
     }
 
-    // --- Cookie Consent Banner ---
-    function showCookieBanner() {
-        if (document.getElementById('cookie-banner-custom')) return;
-        const banner = document.createElement('div');
-        banner.id = 'cookie-banner-custom';
-        banner.style.cssText = `
-            position: fixed; bottom: 0; left: 0; width: 100%;
-            background-color: rgba(26, 26, 26, 0.95); color: #ffffff;
-            padding: 8px 15px; z-index: 999999;
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
-            border-top: 1px solid #aa9166;
-            display: flex; align-items: center; justify-content: center;
-            flex-wrap: wrap; gap: 15px; backdrop-filter: blur(5px);
-        `;
-        banner.innerHTML = `
-            <div style="font-family: 'Roboto', sans-serif; font-size: 13px; color: #ddd;">
-                Sitemizde deneyiminizi geliştirmek için çerezler kullanılmaktadır. 
-                <a href="kvkk.html" style="color: #aa9166; text-decoration: underline;">Gizlilik Politikası</a>.
-            </div>
-            <div style="display: flex; gap: 10px;">
-                 <button id="reject-cookies-btn" style="background: transparent; color: #ccc; border: 1px solid #666; padding: 4px 12px; font-size: 11px; cursor: pointer; border-radius: 3px;">REDDET</button>
-                <button id="accept-cookies-btn" style="background-color: #aa9166; color: #fff; border: 1px solid #aa9166; padding: 4px 15px; font-size: 11px; font-weight: bold; cursor: pointer; border-radius: 3px;">KABUL ET</button>
-            </div>
-        `;
-        document.body.appendChild(banner);
-        document.getElementById('accept-cookies-btn').addEventListener('click', () => {
-            localStorage.setItem('cookieConsent_v3', 'accepted');
-            banner.remove();
-        });
-        document.getElementById('reject-cookies-btn').addEventListener('click', () => {
-            localStorage.setItem('cookieConsent_v3', 'rejected');
-            banner.remove();
-        });
-    }
-    if (!localStorage.getItem('cookieConsent_v3')) { setTimeout(showCookieBanner, 500); }
-
 }); // End DOMContentLoaded
 
 // --- Service Modal Function (Global) ---

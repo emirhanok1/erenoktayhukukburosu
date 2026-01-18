@@ -166,13 +166,13 @@
         <!-- Hero Section Start -->
         <div id="hero-section" class="hero-section">
             <img src="img/slider-8.webp" alt="Av. Eren Oktay Hukuk Bürosu - Ankara'da Profesyonel Avukatlık Hizmetleri"
-                class="hero-img active" width="1920" height="1080">
+                class="hero-img active" width="1920" height="1080" fetchpriority="high">
             <img src="img/slider-6.webp" alt="Av. Eren Oktay Hukuk Bürosu - Hukuki Danışmanlık" class="hero-img"
-                width="1920" height="1080">
+                width="1920" height="1080" loading="lazy">
             <img src="img/slider-9.webp" alt="Av. Eren Oktay Hukuk Bürosu - Profesyonel Hukuk Hizmetleri"
-                class="hero-img" width="1920" height="1080">
+                class="hero-img" width="1920" height="1080" loading="lazy">
             <img src="img/slider-11.webp" alt="Av. Eren Oktay Hukuk Bürosu - Hukuk Danışmanlığı" class="hero-img"
-                width="1920" height="1080">
+                width="1920" height="1080" loading="lazy">
             <div class="hero-overlay"></div>
             <div class="hero-content">
                 <h2 class="hero-title">Av. Eren OKTAY</h2>
@@ -453,7 +453,6 @@
                     </div>
                 </div>
             </div>
-            </footer>
             <!-- Feature End -->
 
 
@@ -643,139 +642,22 @@
             class="fab fa-whatsapp"></i></a>
     </div>
 
+
     <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" defer></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" defer></script>
     <script src="lib/easing/easing.min.js" defer></script>
     <script src="lib/owlcarousel/owl.carousel.min.js" defer></script>
     <script src="lib/isotope/isotope.pkgd.min.js" defer></script>
 
-    <!-- Chart JS (Moved from Head) -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
-
     <!-- Template Javascript -->
-    <script src="js/main.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="js/supabase-config.js"></script>
+    <script src="js/main.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+    <script src="js/supabase-config.js" defer></script>
     <script src="js/contact-dynamic.js" defer></script>
     <script src="js/hero-dynamic.js" defer></script>
     <script src="js/hero-slider.js" defer></script>
     <script src="js/cookie-consent.js" defer></script>
-    <div class="modal fade" id="duyuru1" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Duyuru Detayı</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <img src="img/blog-1.jpg" class="img-fluid mb-3" style="width:100%"
-                        alt="Hukuki Haklarınız - Av. Eren Oktay Hukuk Danışmanlığı">
-                    <p>Yasal haklarınızı bilmek, karşılaşabileceğiniz mağduriyetleri önlemenin ilk adımıdır.
-                        Detaylı
-                        bilgi için uzmanlarımızla görüşebilirsiniz.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="duyuru2" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Hukuk Bülteni</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <img src="img/blog-2.jpg" class="img-fluid mb-3" style="width:100%"
-                        alt="Hukuk Bülteni - Güncel Yasal Düzenlemeler">
-                    <p>Hukuk bültenimizde bu ay öne çıkan başlıklar, yasal düzenlemeler ve pratik bilgiler yer
-                        alıyor.
-                        Abonelerimize özel içeriklerimizle yanınızdayız.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="duyuru3" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Yeni Yargı Paketi</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <img src="img/blog-3.jpg" class="img-fluid mb-3" style="width:100%"
-                        alt="Yeni Yargı Paketi - Ceza İnfaz Düzenlemeleri">
-                    <p>Meclis'ten geçen son yargı paketi ile ceza infaz düzenlemeleri, denetimli serbestlik ve
-                        bazı
-                        kanun maddelerinde önemli değişiklikler yapıldı.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="duyuru4" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Emsal Kararlar</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <img src="img/blog-1.jpg" class="img-fluid mb-3" style="width:100%"
-                        alt="Emsal Kararlar - Yargıtay İçtihatları">
-                    <p>İş hukuku ve boşanma davalarında Yargıtay'ın verdiği son kararlar, uygulamada birliğin
-                        sağlanması
-                        açısından büyük önem taşıyor.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="duyuru5" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Ofisimizden Haberler</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <img src="img/blog-2.jpg" class="img-fluid mb-3" style="width:100%"
-                        alt="Ofisimizden Haberler - Uluslararası Hukuk Konferansı">
-                    <p>Ofisimiz, uluslararası hukuk konferansında ülkemizi temsil etti. Ayrıca yerel
-                        üniversitelerle
-                        işbirliği protokolleri imzaladık.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
 
 </body>
 
