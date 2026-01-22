@@ -12,6 +12,10 @@
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fqoyrcmhphwnyelibhgx.supabase.co">
+
     <!-- Google Font -->
     <link
         href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,600;1,700;1,800&family=Roboto:wght@400;500&display=swap"
@@ -345,9 +349,7 @@
             z-index: 0;
         }
 
-        .hero-img:first-of-type {
-            /* opacity: 1; Removed to allow slider logic to control opacity */
-        }
+        /* .hero-img:first-of-type { opacity: 1; } Removed to allow slider logic to control opacity */
 
         .hero-img.active {
             opacity: 1;
@@ -462,7 +464,9 @@
     <link href="css/cookie-consent.css" rel="stylesheet" media="print" onload="this.media='all'">
 
     <!-- Preload LCP Image -->
-    <link rel="preload" as="image" href="img/slider-8.webp">
+    <link rel="preload" as="image" href="img/slider-8.webp"
+        imagesrcset="img/slider-8-mobile.webp 576w, img/slider-8-opt.webp 1920w" imagesizes="100vw"
+        fetchpriority="high">
 
     <!-- Schema.org JSON-LD for SEO (Law Firm) -->
     <script type="application/ld+json">
@@ -594,14 +598,23 @@
     <main>
         <!-- Hero Section Start -->
         <div id="hero-section" class="hero-section">
-            <img src="img/slider-8.webp" alt="Av. Eren Oktay Hukuk Bürosu - Ankara'da Profesyonel Avukatlık Hizmetleri"
+
+            <img src="img/slider-8.webp"
+                srcset="img/slider-8-mobile.webp 576w, img/slider-8-tablet.webp 992w, img/slider-8-opt.webp 1920w"
+                sizes="100vw" alt="Av. Eren Oktay Hukuk Bürosu - Ankara'da Profesyonel Avukatlık Hizmetleri"
                 class="hero-img active" width="1920" height="1080" fetchpriority="high">
-            <img src="img/slider-6.webp" alt="Av. Eren Oktay Hukuk Bürosu - Hukuki Danışmanlık" class="hero-img"
+            <img src="img/slider-6.webp"
+                srcset="img/slider-6-mobile.webp 576w, img/slider-6-tablet.webp 992w, img/slider-6-opt.webp 1920w"
+                sizes="100vw" alt="Av. Eren Oktay Hukuk Bürosu - Hukuki Danışmanlık" class="hero-img" width="1920"
+                height="1080" loading="lazy">
+            <img src="img/slider-9.webp"
+                srcset="img/slider-9-mobile.webp 576w, img/slider-9-tablet.webp 992w, img/slider-9-opt.webp 1920w"
+                sizes="100vw" alt="Av. Eren Oktay Hukuk Bürosu - Profesyonel Hukuk Hizmetleri" class="hero-img"
                 width="1920" height="1080" loading="lazy">
-            <img src="img/slider-9.webp" alt="Av. Eren Oktay Hukuk Bürosu - Profesyonel Hukuk Hizmetleri"
-                class="hero-img" width="1920" height="1080" loading="lazy">
-            <img src="img/slider-11.webp" alt="Av. Eren Oktay Hukuk Bürosu - Hukuk Danışmanlığı" class="hero-img"
-                width="1920" height="1080" loading="lazy">
+            <img src="img/slider-11.webp"
+                srcset="img/slider-11-mobile.webp 576w, img/slider-11-tablet.webp 992w, img/slider-11-opt.webp 1920w"
+                sizes="100vw" alt="Av. Eren Oktay Hukuk Bürosu - Hukuk Danışmanlığı" class="hero-img" width="1920"
+                height="1080" loading="lazy">
             <div class="hero-overlay"></div>
             <div class="hero-content">
                 <h2 class="hero-title">Av. Eren OKTAY</h2>
@@ -908,7 +921,8 @@
                                     </div>
                                     <div id="collapseOne" class="collapse show" data-parent="#accordion">
                                         <div class="card-body">
-                                            İlk görüşmede durum analizi yapılır, hukuki yol haritası belirlenir ve süreç
+                                            İlk görüşmede durum analizi yapılır, hukuki yol haritası belirlenir ve
+                                            süreç
                                             şeffaflıkla yönetilir.
                                         </div>
                                     </div>
@@ -921,7 +935,8 @@
                                     </div>
                                     <div id="collapseTwo" class="collapse" data-parent="#accordion">
                                         <div class="card-body">
-                                            Avukatlık asgari ücret tarifesine uygun olarak ücretlendirme yapılmaktadır.
+                                            Avukatlık asgari ücret tarifesine uygun olarak ücretlendirme
+                                            yapılmaktadır.
                                         </div>
                                     </div>
                                 </div>
@@ -960,7 +975,8 @@
                                     </div>
                                     <div id="collapseFive" class="collapse" data-parent="#accordion">
                                         <div class="card-body">
-                                            Soruşturma ve kovuşturma evrelerinde haklarınızın korunması için titiz bir
+                                            Soruşturma ve kovuşturma evrelerinde haklarınızın korunması için titiz
+                                            bir
                                             savunma stratejisi izlenir.
                                         </div>
                                     </div>

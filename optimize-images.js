@@ -10,9 +10,16 @@ const path = require('path');
 const IMG_DIR = path.join(__dirname, 'img');
 
 const TARGETS = [
-    { input: 'slider-1.jpg', outputWebp: 'slider-1-opt.webp', outputJpg: 'slider-1-opt.jpg' },
-    { input: 'slider-2.jpg', outputWebp: 'slider-2-opt.webp', outputJpg: 'slider-2-opt.jpg' },
-    { input: 'slider-3.jpg', outputWebp: 'slider-3-opt.webp', outputJpg: 'slider-3-opt.jpg' }
+    // Hero Sliders
+    { input: 'slider-6.webp', outputWebp: 'slider-6-opt.webp', outputJpg: 'slider-6-opt.jpg' },
+    { input: 'slider-8.webp', outputWebp: 'slider-8-opt.webp', outputJpg: 'slider-8-opt.jpg' },
+    { input: 'slider-9.webp', outputWebp: 'slider-9-opt.webp', outputJpg: 'slider-9-opt.jpg' },
+    { input: 'slider-11.webp', outputWebp: 'slider-11-opt.webp', outputJpg: 'slider-11-opt.jpg' },
+
+    // Office Images
+    { input: 'ofis-2.webp', outputWebp: 'ofis-2-opt.webp', outputJpg: 'ofis-2-opt.jpg' },
+    { input: 'ofis-3.webp', outputWebp: 'ofis-3-opt.webp', outputJpg: 'ofis-3-opt.jpg' },
+    { input: 'abim-1.webp', outputWebp: 'abim-1-opt.webp', outputJpg: 'abim-1-opt.jpg' }
 ];
 
 const TARGET_SIZE_KB = 200;
