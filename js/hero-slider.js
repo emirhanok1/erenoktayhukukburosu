@@ -1,15 +1,28 @@
 // Hero Slider Functionality
-(function () {
+document.addEventListener('DOMContentLoaded', function () {
     'use strict';
 
-    // Get all slider images (now inside picture elements)
-    const sliderImages = document.querySelectorAll('.hero-section picture img');
-    let currentSlide = 0;
+    // Get all slider images
+    const sliderImages = document.querySelectorAll('.hero-img');
 
-    // Set first image as active
-    if (sliderImages.length > 0) {
+    // Safety check
+    if (!sliderImages || sliderImages.length === 0) {
+        console.warn('Hero slider: No images found with class .hero-img');
+        return;
+    }
+
+    // Ensure first image is active if none are
+    if (!document.querySelector('.hero-img.active')) {
         sliderImages[0].classList.add('active');
     }
+
+    let currentSlide = 0;
+    // Find current active slide index if any
+    sliderImages.forEach((img, index) => {
+        if (img.classList.contains('active')) {
+            currentSlide = index;
+        }
+    });
 
     // Function to show next slide
     function nextSlide() {
@@ -24,7 +37,12 @@
     }
 
     // Auto-advance slides every 5 seconds
-    if (sliderImages.length > 1) {
-        setInterval(nextSlide, 5000);
+    const slideInterval = setInterval(nextSlide, 5000);
+
+    // Optional: Pause on hover
+    const heroSection = document.querySelector('.hero-section');
+    if (heroSection) {
+        heroSection.addEventListener('mouseenter', () => clearInterval(slideInterval));
+        heroSection.addEventListener('mouseleave', () => setInterval(nextSlide, 5000));
     }
-})();
+});

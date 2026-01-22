@@ -346,7 +346,7 @@
         }
 
         .hero-img:first-of-type {
-            opacity: 1;
+            /* opacity: 1; Removed to allow slider logic to control opacity */
         }
 
         .hero-img.active {
@@ -461,13 +461,8 @@
     <link href="css/hero-section.css" rel="stylesheet" media="print" onload="this.media='all'">
     <link href="css/cookie-consent.css" rel="stylesheet" media="print" onload="this.media='all'">
 
-    <!-- Preload LCP Image (Responsive) -->
-    <link rel="preload" as="image" href="img/slider-8.webp" media="(min-width: 1200px)"
-        imagesrcset="img/slider-8.webp 1920w">
-    <link rel="preload" as="image" href="img/slider-8-tablet.webp" media="(min-width: 768px) and (max-width: 1199px)"
-        imagesrcset="img/slider-8-tablet.webp 1200w">
-    <link rel="preload" as="image" href="img/slider-8-mobile.webp" media="(max-width: 767px)"
-        imagesrcset="img/slider-8-mobile.webp 768w">
+    <!-- Preload LCP Image -->
+    <link rel="preload" as="image" href="img/slider-8.webp">
 
     <!-- Schema.org JSON-LD for SEO (Law Firm) -->
     <script type="application/ld+json">
@@ -599,38 +594,14 @@
     <main>
         <!-- Hero Section Start -->
         <div id="hero-section" class="hero-section">
-            <!-- Hero Image 1 (LCP) -->
-            <picture>
-                <source media="(max-width: 767px)" srcset="img/slider-8-mobile.webp" width="768" height="432">
-                <source media="(max-width: 1199px)" srcset="img/slider-8-tablet.webp" width="1200" height="675">
-                <img src="img/slider-8.webp"
-                    alt="Av. Eren Oktay Hukuk Bürosu - Ankara'da Profesyonel Avukatlık Hizmetleri"
-                    class="hero-img active" width="1920" height="1080" fetchpriority="high">
-            </picture>
-
-            <!-- Hero Image 2 -->
-            <picture>
-                <source media="(max-width: 767px)" srcset="img/slider-6-mobile.webp" width="768" height="432">
-                <source media="(max-width: 1199px)" srcset="img/slider-6-tablet.webp" width="1200" height="675">
-                <img src="img/slider-6.webp" alt="Av. Eren Oktay Hukuk Bürosu - Hukuki Danışmanlık" class="hero-img"
-                    width="1920" height="1080" loading="lazy">
-            </picture>
-
-            <!-- Hero Image 3 -->
-            <picture>
-                <source media="(max-width: 767px)" srcset="img/slider-9-mobile.webp" width="768" height="432">
-                <source media="(max-width: 1199px)" srcset="img/slider-9-tablet.webp" width="1200" height="675">
-                <img src="img/slider-9.webp" alt="Av. Eren Oktay Hukuk Bürosu - Profesyonel Hukuk Hizmetleri"
-                    class="hero-img" width="1920" height="1080" loading="lazy">
-            </picture>
-
-            <!-- Hero Image 4 -->
-            <picture>
-                <source media="(max-width: 767px)" srcset="img/slider-11-mobile.webp" width="768" height="432">
-                <source media="(max-width: 1199px)" srcset="img/slider-11-tablet.webp" width="1200" height="675">
-                <img src="img/slider-11.webp" alt="Av. Eren Oktay Hukuk Bürosu - Hukuk Danışmanlığı" class="hero-img"
-                    width="1920" height="1080" loading="lazy">
-            </picture>
+            <img src="img/slider-8.webp" alt="Av. Eren Oktay Hukuk Bürosu - Ankara'da Profesyonel Avukatlık Hizmetleri"
+                class="hero-img active" width="1920" height="1080" fetchpriority="high">
+            <img src="img/slider-6.webp" alt="Av. Eren Oktay Hukuk Bürosu - Hukuki Danışmanlık" class="hero-img"
+                width="1920" height="1080" loading="lazy">
+            <img src="img/slider-9.webp" alt="Av. Eren Oktay Hukuk Bürosu - Profesyonel Hukuk Hizmetleri"
+                class="hero-img" width="1920" height="1080" loading="lazy">
+            <img src="img/slider-11.webp" alt="Av. Eren Oktay Hukuk Bürosu - Hukuk Danışmanlığı" class="hero-img"
+                width="1920" height="1080" loading="lazy">
             <div class="hero-overlay"></div>
             <div class="hero-content">
                 <h2 class="hero-title">Av. Eren OKTAY</h2>
@@ -1113,7 +1084,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
     <script src="js/supabase-config.js" defer></script>
     <script src="js/contact-dynamic.js" defer></script>
-    <script src="js/hero-dynamic.js" defer></script>
+    <!-- <script src="js/hero-dynamic.js" defer></script> -->
     <script src="js/hero-slider.js" defer></script>
     <script src="js/cookie-consent.js" defer></script>
 
