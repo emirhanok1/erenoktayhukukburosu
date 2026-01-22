@@ -2,9 +2,14 @@
 (function () {
     'use strict';
 
-    // Get all slider images
-    const sliderImages = document.querySelectorAll('.hero-img');
+    // Get all slider images (now inside picture elements)
+    const sliderImages = document.querySelectorAll('.hero-section picture img');
     let currentSlide = 0;
+
+    // Set first image as active
+    if (sliderImages.length > 0) {
+        sliderImages[0].classList.add('active');
+    }
 
     // Function to show next slide
     function nextSlide() {
@@ -19,5 +24,7 @@
     }
 
     // Auto-advance slides every 5 seconds
-    setInterval(nextSlide, 5000);
+    if (sliderImages.length > 1) {
+        setInterval(nextSlide, 5000);
+    }
 })();

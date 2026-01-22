@@ -1,21 +1,29 @@
-﻿
-document.addEventListener("DOMContentLoaded", async function () {
+﻿document.addEventListener("DOMContentLoaded", async function () {
 
-    // --- Sticky Navbar ---
+    // --- Sticky Navbar (Optimized to prevent Forced Reflow) ---
+    let ticking = false;
+
     window.addEventListener('scroll', function () {
-        // --- Sticky Navbar ---
-        const navBar = document.querySelector('.nav-bar');
-        const carousel = document.querySelector('.carousel');
-        const pageHeader = document.querySelector('.page-header');
+        if (!ticking) {
+            window.requestAnimationFrame(function () {
+                const navBar = document.querySelector('.nav-bar');
+                const carousel = document.querySelector('.carousel');
+                const pageHeader = document.querySelector('.page-header');
 
-        if (window.scrollY > 90) {
-            if (navBar) navBar.classList.add('nav-sticky');
-            if (carousel) carousel.style.marginTop = "73px";
-            if (pageHeader) pageHeader.style.marginTop = "73px";
-        } else {
-            if (navBar) navBar.classList.remove('nav-sticky');
-            if (carousel) carousel.style.marginTop = "0";
-            if (pageHeader) pageHeader.style.marginTop = "0";
+                if (window.scrollY > 90) {
+                    if (navBar) navBar.classList.add('nav-sticky');
+                    if (carousel) carousel.style.marginTop = "73px";
+                    if (pageHeader) pageHeader.style.marginTop = "73px";
+                } else {
+                    if (navBar) navBar.classList.remove('nav-sticky');
+                    if (carousel) carousel.style.marginTop = "0";
+                    if (pageHeader) pageHeader.style.marginTop = "0";
+                }
+
+                ticking = false;
+            });
+
+            ticking = true;
         }
     });
 
