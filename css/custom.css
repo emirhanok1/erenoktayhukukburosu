@@ -65,7 +65,7 @@
     }
 
     .top-bar .logo img {
-        height: 60px !important;
+        height: 100px !important;
         width: auto !important;
         margin-right: 12px !important;
     }
@@ -114,6 +114,6 @@
     }
 
     .top-bar .logo img {
-        height: 45px !important;
+        height: 80px !important;
     }
 }
