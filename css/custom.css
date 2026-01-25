@@ -65,13 +65,13 @@
     }
 
     .top-bar .logo img {
-        height: 45px !important;
+        height: 60px !important;
         width: auto !important;
-        margin-right: 10px !important;
+        margin-right: 12px !important;
     }
 
     .top-bar .logo h1 {
-        font-size: 18px !important;
+        font-size: 22px !important;
         line-height: 1.2 !important;
         margin: 0 !important;
         white-space: nowrap !important;
@@ -109,11 +109,11 @@
 
 @media (max-width: 400px) {
     .top-bar .logo h1 {
-        font-size: 16px !important;
-        /* Even smaller for very small screens */
+        font-size: 19px !important;
+        /* Slightly smaller for very small screens but bigger than before */
     }
 
     .top-bar .logo img {
-        height: 35px !important;
+        height: 45px !important;
     }
 }
