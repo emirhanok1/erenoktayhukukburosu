@@ -57,20 +57,5 @@
     <priority>0.7</priority>
   </url>
   
-  <!-- Ekip -->
-  <url>
-    <loc>https://www.erenoktay.av.tr/team.html</loc>
-    <lastmod>2025-12-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <!-- Portfolio -->
-  <url>
-    <loc>https://www.erenoktay.av.tr/portfolio.html</loc>
-    <lastmod>2025-12-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
+
 </urlset>
