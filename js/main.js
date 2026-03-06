@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                     announcements.forEach(item => {
                         const date = new Date(item.created_at).toLocaleDateString('tr-TR');
                         // Fallback image if none provided
-                        const img = item.image_url || 'img/blog-1.jpg';
+                        const img = item.image_url || 'img/logo.webp';
                         html += `
                         <div class="blog-item">
                             <img src="${img}" alt="${item.title}" style="height: 200px; object-fit: cover;">

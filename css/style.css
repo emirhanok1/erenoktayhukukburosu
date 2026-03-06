@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
 /*******************************/
 /********* General CSS *********/
 /*******************************/
@@ -1899,5 +1901,3 @@ a:focus {
     pointer-events: auto;
     width: 60px;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
