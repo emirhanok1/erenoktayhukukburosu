@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -9,13 +9,13 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Asgari Ücret Yönetimi - Yönetim Paneli</title>
+    <title>Asgari Ãœcret YÃ¶netimi - YÃ¶netim Paneli</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+        rel="stylesheet" media="print" onload="this.media='all'">
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
@@ -35,7 +35,7 @@
                 <div class="sidebar-brand-icon">
                     <i class="fas fa-cogs"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">YÖNETİM PANELİ</div>
+                <div class="sidebar-brand-text mx-3">YÃ–NETÄ°M PANELÄ°</div>
             </a>
 
             <!-- Divider -->
@@ -45,7 +45,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="index.html">
                     <i class="fas fa-fw fa-edit"></i>
-                    <span>Duyuru Yönetimi</span></a>
+                    <span>Duyuru YÃ¶netimi</span></a>
             </li>
 
             <!-- Nav Item - Gelen Kutusu -->
@@ -55,18 +55,18 @@
                     <span>Gelen Kutusu</span></a>
             </li>
 
-            <!-- Nav Item - Asgari Ücret -->
+            <!-- Nav Item - Asgari Ãœcret -->
             <li class="nav-item active">
                 <a class="nav-link" href="wages.html">
                     <i class="fas fa-fw fa-money-bill-wave"></i>
-                    <span>Asgari Ücret Yönetimi</span></a>
+                    <span>Asgari Ãœcret YÃ¶netimi</span></a>
             </li>
 
-            <!-- Nav Item - Siteye Dön -->
+            <!-- Nav Item - Siteye DÃ¶n -->
             <li class="nav-item">
                 <a class="nav-link" href="../index.html">
                     <i class="fas fa-fw fa-globe"></i>
-                    <span>Siteye Dön</span></a>
+                    <span>Siteye DÃ¶n</span></a>
             </li>
 
             <!-- Divider -->
@@ -126,17 +126,17 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Asgari Ücret Yönetimi</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Asgari Ãœcret YÃ¶netimi</h1>
                         <button class="btn btn-primary btn-sm shadow-sm" data-toggle="modal" data-target="#wageModal"
                             onclick="resetForm()">
-                            <i class="fas fa-plus fa-sm text-white-50"></i> Yeni Dönem Ekle
+                            <i class="fas fa-plus fa-sm text-white-50"></i> Yeni DÃ¶nem Ekle
                         </button>
                     </div>
 
                     <!-- Wages Table -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Kayıtlı Asgari Ücret Dönemleri</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">KayÄ±tlÄ± Asgari Ãœcret DÃ¶nemleri</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -144,11 +144,11 @@
                                     cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>Başlangıç Tarihi</th>
-                                            <th>Bitiş Tarihi</th>
+                                            <th>BaÅŸlangÄ±Ã§ Tarihi</th>
+                                            <th>BitiÅŸ Tarihi</th>
                                             <th>Net Tutar (TL)</th>
-                                            <th>Brüt Tutar (TL)</th>
-                                            <th>İşlemler</th>
+                                            <th>BrÃ¼t Tutar (TL)</th>
+                                            <th>Ä°ÅŸlemler</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -169,7 +169,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Oktay Hukuk Bürosu 2025</span>
+                        <span>Copyright &copy; Oktay Hukuk BÃ¼rosu 2025</span>
                     </div>
                 </div>
             </footer>
@@ -192,15 +192,15 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Çıkış Yapılsın Mı?</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Ã‡Ä±kÄ±ÅŸ YapÄ±lsÄ±n MÄ±?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
+                        <span aria-hidden="true">Ã—</span>
                     </button>
                 </div>
-                <div class="modal-body">Mevcut oturumunuzu sonlandırmak için "Çıkış Yap" butonuna tıklayın.</div>
+                <div class="modal-body">Mevcut oturumunuzu sonlandÄ±rmak iÃ§in "Ã‡Ä±kÄ±ÅŸ Yap" butonuna tÄ±klayÄ±n.</div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">İptal</button>
-                    <a class="btn btn-primary" href="login.html" id="confirmLogout">Çıkış Yap</a>
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Ä°ptal</button>
+                    <a class="btn btn-primary" href="login.html" id="confirmLogout">Ã‡Ä±kÄ±ÅŸ Yap</a>
                 </div>
             </div>
         </div>
@@ -212,7 +212,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="wageModalLabel">Asgari Ücret Dönemi Ekle/Düzenle</h5>
+                    <h5 class="modal-title" id="wageModalLabel">Asgari Ãœcret DÃ¶nemi Ekle/DÃ¼zenle</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -221,11 +221,11 @@
                     <form id="wageForm">
                         <input type="hidden" id="wageId">
                         <div class="form-group">
-                            <label for="startDate">Başlangıç Tarihi</label>
+                            <label for="startDate">BaÅŸlangÄ±Ã§ Tarihi</label>
                             <input type="date" class="form-control" id="startDate" required>
                         </div>
                         <div class="form-group">
-                            <label for="endDate">Bitiş Tarihi</label>
+                            <label for="endDate">BitiÅŸ Tarihi</label>
                             <input type="date" class="form-control" id="endDate" required>
                         </div>
                         <div class="form-group">
@@ -233,14 +233,14 @@
                             <input type="number" step="0.01" class="form-control" id="netAmount" required>
                         </div>
                         <div class="form-group">
-                            <label for="brutAmount">Brüt Tutar (TL) <small
+                            <label for="brutAmount">BrÃ¼t Tutar (TL) <small
                                     class="text-muted">(Opsiyonel)</small></label>
                             <input type="number" step="0.01" class="form-control" id="brutAmount">
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">İptal</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Ä°ptal</button>
                     <button type="button" class="btn btn-primary" id="saveWageBtn">Kaydet</button>
                 </div>
             </div>
@@ -291,7 +291,7 @@
                 tbody.empty();
 
                 if (data.length === 0) {
-                    tbody.append('<tr><td colspan="5" class="text-center">Kayıtlı veri bulunamadı.</td></tr>');
+                    tbody.append('<tr><td colspan="5" class="text-center">KayÄ±tlÄ± veri bulunamadÄ±.</td></tr>');
                     return;
                 }
 
@@ -317,7 +317,7 @@
 
             } catch (error) {
                 console.error('Error loading wages:', error);
-                alert('Veriler yüklenirken hata oluştu.');
+                alert('Veriler yÃ¼klenirken hata oluÅŸtu.');
             }
         }
 
@@ -329,7 +329,7 @@
             const brut_amount = $('#brutAmount').val() ? parseFloat($('#brutAmount').val()) : null;
 
             if (!start_date || !end_date || !net_amount) {
-                alert('Lütfen zorunlu alanları doldurun.');
+                alert('LÃ¼tfen zorunlu alanlarÄ± doldurun.');
                 return;
             }
 
@@ -363,11 +363,11 @@
 
                 $('#wageModal').modal('hide');
                 loadWages();
-                alert('Kayıt başarıyla tamamlandı.');
+                alert('KayÄ±t baÅŸarÄ±yla tamamlandÄ±.');
 
             } catch (error) {
                 console.error('Error saving wage:', error);
-                alert('Kaydetme hatası: ' + error.message);
+                alert('Kaydetme hatasÄ±: ' + error.message);
             } finally {
                 $('#saveWageBtn').prop('disabled', false).text('Kaydet');
             }
@@ -389,17 +389,17 @@
                 $('#netAmount').val(data.net_amount);
                 $('#brutAmount').val(data.brut_amount);
 
-                $('#wageModalLabel').text('Asgari Ücret Dönemi Düzenle');
+                $('#wageModalLabel').text('Asgari Ãœcret DÃ¶nemi DÃ¼zenle');
                 $('#wageModal').modal('show');
 
             } catch (error) {
                 console.error('Error fetching wage:', error);
-                alert('Veri alınamadı.');
+                alert('Veri alÄ±namadÄ±.');
             }
         }
 
         async function deleteWage(id) {
-            if (!confirm('Bu kaydı silmek istediğinize emin misiniz?')) return;
+            if (!confirm('Bu kaydÄ± silmek istediÄŸinize emin misiniz?')) return;
 
             try {
                 const { error } = await supabaseClient
@@ -412,14 +412,14 @@
 
             } catch (error) {
                 console.error('Error deleting wage:', error);
-                alert('Silme sırasında hata oluştu.');
+                alert('Silme sÄ±rasÄ±nda hata oluÅŸtu.');
             }
         }
 
         function resetForm() {
             $('#wageForm')[0].reset();
             $('#wageId').val('');
-            $('#wageModalLabel').text('Asgari Ücret Dönemi Ekle');
+            $('#wageModalLabel').text('Asgari Ãœcret DÃ¶nemi Ekle');
         }
 
         function formatCurrency(value) {

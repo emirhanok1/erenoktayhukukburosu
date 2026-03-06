@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -9,13 +9,13 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Oktay Hukuk Bürosu - Giriş</title>
+    <title>Oktay Hukuk BÃ¼rosu - GiriÅŸ</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+        rel="stylesheet" media="print" onload="this.media='all'">
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
@@ -38,7 +38,7 @@
                             <div class="col-lg-12">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Oktay Hukuk Bürosu YÖNETİM</h1>
+                                        <h1 class="h4 text-gray-900 mb-4">Oktay Hukuk BÃ¼rosu YÃ–NETÄ°M</h1>
                                     </div>
                                     <form class="user">
                                         <div class="form-group">
@@ -47,22 +47,22 @@
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user" id="password"
-                                                placeholder="Şifre">
+                                                placeholder="Åifre">
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
                                                 <input type="checkbox" class="custom-control-input" id="customCheck">
                                                 <label class="custom-control-label" for="customCheck">Beni
-                                                    Hatırla</label>
+                                                    HatÄ±rla</label>
                                             </div>
                                         </div>
                                         <button type="button" id="loginBtn" class="btn btn-primary btn-user btn-block">
-                                            Giriş Yap
+                                            GiriÅŸ Yap
                                         </button>
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="#">Şifremi Unuttum</a>
+                                        <a class="small" href="#">Åifremi Unuttum</a>
                                     </div>
                                 </div>
                             </div>
@@ -98,12 +98,12 @@
 
             // Basic Validation
             if (!email || !password) {
-                alert("Lütfen e-posta ve şifrenizi giriniz.");
+                alert("LÃ¼tfen e-posta ve ÅŸifrenizi giriniz.");
                 return;
             }
 
             // UI Loading State
-            loginBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Giriş Yapılıyor...';
+            loginBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> GiriÅŸ YapÄ±lÄ±yor...';
             loginBtn.disabled = true;
 
             try {
@@ -120,8 +120,8 @@
                 window.location.href = "index.html";
 
             } catch (error) {
-                alert("Giriş Başarısız: " + error.message);
-                loginBtn.innerHTML = 'Giriş Yap';
+                alert("GiriÅŸ BaÅŸarÄ±sÄ±z: " + error.message);
+                loginBtn.innerHTML = 'GiriÅŸ Yap';
                 loginBtn.disabled = false;
             }
         }

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -15,7 +15,7 @@
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+        rel="stylesheet" media="print" onload="this.media='all'">
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
@@ -35,7 +35,7 @@
                 <div class="sidebar-brand-icon">
                     <i class="fas fa-cogs"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">YÖNETİM PANELİ</div>
+                <div class="sidebar-brand-text mx-3">YÃ–NETÄ°M PANELÄ°</div>
             </a>
 
             <!-- Divider -->
@@ -45,7 +45,7 @@
             <li class="nav-item active">
                 <a class="nav-link" href="index.html">
                     <i class="fas fa-fw fa-edit"></i>
-                    <span>Duyuru Yönetimi</span></a>
+                    <span>Duyuru YÃ¶netimi</span></a>
             </li>
 
             <!-- Nav Item - Gelen Kutusu -->
@@ -55,18 +55,18 @@
                     <span>Gelen Kutusu</span></a>
             </li>
 
-            <!-- Nav Item - Asgari Ücret -->
+            <!-- Nav Item - Asgari Ãœcret -->
             <li class="nav-item">
                 <a class="nav-link" href="wages.html">
                     <i class="fas fa-fw fa-money-bill-wave"></i>
-                    <span>Asgari Ücret Yönetimi</span></a>
+                    <span>Asgari Ãœcret YÃ¶netimi</span></a>
             </li>
 
-            <!-- Nav Item - Ofis Ayarları -->
+            <!-- Nav Item - Ofis AyarlarÄ± -->
             <li class="nav-item">
                 <a class="nav-link" href="office-settings.html">
                     <i class="fas fa-fw fa-building"></i>
-                    <span>Ofis Ayarları</span></a>
+                    <span>Ofis AyarlarÄ±</span></a>
             </li>
 
             <!-- Nav Item - Duyuru Listesi -->
@@ -76,11 +76,11 @@
                     <span>Duyuru Listesi</span></a>
             </li>
 
-            <!-- Nav Item - Siteye Dön -->
+            <!-- Nav Item - Siteye DÃ¶n -->
             <li class="nav-item">
                 <a class="nav-link" href="../index.html">
                     <i class="fas fa-fw fa-globe"></i>
-                    <span>Siteye Dön</span></a>
+                    <span>Siteye DÃ¶n</span></a>
             </li>
 
             <!-- Divider -->
@@ -140,7 +140,7 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Duyuru Yönetimi</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Duyuru YÃ¶netimi</h1>
                     </div>
 
                     <div class="row">
@@ -153,20 +153,20 @@
                                 <div class="card-body">
                                     <form>
                                         <div class="form-group">
-                                            <label for="title">Duyuru Başlığı</label>
+                                            <label for="title">Duyuru BaÅŸlÄ±ÄŸÄ±</label>
                                             <input type="text" class="form-control" id="title"
-                                                placeholder="Başlık giriniz...">
+                                                placeholder="BaÅŸlÄ±k giriniz...">
                                         </div>
                                         <div class="form-group">
                                             <label for="category">Kategori</label>
                                             <select class="form-control" id="category">
                                                 <option>Haberler</option>
-                                                <option>Yargıtay Kararları</option>
+                                                <option>YargÄ±tay KararlarÄ±</option>
                                                 <option>Makaleler</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="duyuruContent">İçerik</label>
+                                            <label for="duyuruContent">Ä°Ã§erik</label>
                                             <textarea class="form-control" id="duyuruContent" rows="5"></textarea>
                                         </div>
 
@@ -185,10 +185,10 @@
                                                     class="d-flex flex-column align-items-center justify-content-center"
                                                     style="height: 100%; min-height: 150px;">
                                                     <i class="fas fa-image fa-3x text-gray-400 mb-2"></i>
-                                                    <p class="mb-0 text-gray-600">Resim Seçmek veya Değiştirmek İçin
-                                                        Tıklayın</p>
-                                                    <small class="text-gray-500">(Mevcut resmi değiştirmek
-                                                        istemiyorsanız boş bırakın)</small>
+                                                    <p class="mb-0 text-gray-600">Resim SeÃ§mek veya DeÄŸiÅŸtirmek Ä°Ã§in
+                                                        TÄ±klayÄ±n</p>
+                                                    <small class="text-gray-500">(Mevcut resmi deÄŸiÅŸtirmek
+                                                        istemiyorsanÄ±z boÅŸ bÄ±rakÄ±n)</small>
                                                 </div>
 
                                                 <!-- Hidden Input -->
@@ -202,7 +202,7 @@
                                             <input type="file" class="form-control-file" id="attachment">
                                         </div>
                                         <button type="submit" class="btn btn-primary btn-block">Kaydet ve
-                                            Yayınla</button>
+                                            YayÄ±nla</button>
                                     </form>
                                 </div>
                             </div>
@@ -217,7 +217,7 @@
                                         <table class="table table-bordered" width="100%" cellspacing="0">
                                             <thead>
                                                 <tr>
-                                                    <th>Başlık</th>
+                                                    <th>BaÅŸlÄ±k</th>
                                                     <th>Kategori</th>
                                                     <th>Tarih</th>
                                                     <th>Durum</th>
@@ -243,7 +243,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Oktay Hukuk Bürosu 2025</span>
+                        <span>Copyright &copy; Oktay Hukuk BÃ¼rosu 2025</span>
                     </div>
                 </div>
             </footer>
@@ -268,7 +268,7 @@
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
+                        <span aria-hidden="true">Ã—</span>
                     </button>
                 </div>
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
@@ -321,7 +321,7 @@
                 const file = e.target.files[0];
                 if (file) {
                     if (file.type !== 'image/webp') {
-                        alert("Lütfen sadece .webp uzantılı görsel seçiniz!");
+                        alert("LÃ¼tfen sadece .webp uzantÄ±lÄ± gÃ¶rsel seÃ§iniz!");
                         return;
                     }
                     const reader = new FileReader();
@@ -336,7 +336,7 @@
             // --- 1. Load Announcements ---
             async function loadAnnouncements() {
                 const tbody = $('#duyuruListesi');
-                tbody.html('<tr><td colspan="4" class="text-center"><i class="fas fa-spinner fa-spin"></i> Yükleniyor...</td></tr>');
+                tbody.html('<tr><td colspan="4" class="text-center"><i class="fas fa-spinner fa-spin"></i> YÃ¼kleniyor...</td></tr>');
 
                 try {
                     const { data, error } = await supabaseClient
@@ -349,7 +349,7 @@
                     tbody.empty();
 
                     if (data.length === 0) {
-                        tbody.html('<tr><td colspan="4" class="text-center">Henüz duyuru eklenmemiş.</td></tr>');
+                        tbody.html('<tr><td colspan="4" class="text-center">HenÃ¼z duyuru eklenmemiÅŸ.</td></tr>');
                         return;
                     }
 
@@ -362,7 +362,7 @@
                                 <td>${date}</td>
                                 <td>
                                     <button class="btn btn-warning btn-sm edit-btn mr-1" data-id="${item.id}">
-                                        <i class="fas fa-edit"></i> Düzenle
+                                        <i class="fas fa-edit"></i> DÃ¼zenle
                                     </button>
                                     <button class="btn btn-danger btn-sm delete-btn" data-id="${item.id}">
                                         <i class="fas fa-trash"></i> Sil
@@ -404,12 +404,12 @@
                 const imageFile = $('#coverImage')[0].files[0];
 
                 if (!title || !category || !content) {
-                    alert("Lütfen başlık, kategori ve içerik alanlarını doldurun.");
+                    alert("LÃ¼tfen baÅŸlÄ±k, kategori ve iÃ§erik alanlarÄ±nÄ± doldurun.");
                     return;
                 }
 
                 // UI Loading
-                submitBtn.html('<i class="fas fa-spinner fa-spin"></i> İşleniyor...');
+                submitBtn.html('<i class="fas fa-spinner fa-spin"></i> Ä°ÅŸleniyor...');
                 submitBtn.prop('disabled', true);
 
                 try {
@@ -445,7 +445,7 @@
                             .eq('id', currentEditId);
 
                         if (error) throw error;
-                        alert("Duyuru başarıyla güncellendi!");
+                        alert("Duyuru baÅŸarÄ±yla gÃ¼ncellendi!");
 
                     } else {
                         // --- INSERT MODE ---
@@ -464,7 +464,7 @@
                             .insert([insertData]);
 
                         if (error) throw error;
-                        alert("Duyuru başarıyla yayınlandı!");
+                        alert("Duyuru baÅŸarÄ±yla yayÄ±nlandÄ±!");
                     }
 
                     // Reset Form
@@ -473,9 +473,9 @@
 
                 } catch (error) {
                     console.error('Error saving:', error);
-                    alert("Hata oluştu: " + error.message);
+                    alert("Hata oluÅŸtu: " + error.message);
                 } finally {
-                    submitBtn.html(currentEditId ? 'Güncelle' : 'Kaydet ve Yayınla');
+                    submitBtn.html(currentEditId ? 'GÃ¼ncelle' : 'Kaydet ve YayÄ±nla');
                     submitBtn.prop('disabled', false);
                 }
             });
@@ -511,20 +511,20 @@
 
                     // UI Updates
                     $('html, body').animate({ scrollTop: 0 }, 'fast');
-                    $('.card-header h6').text('Duyuruyu Düzenle');
+                    $('.card-header h6').text('Duyuruyu DÃ¼zenle');
                     const submitBtn = $('form button[type="submit"]');
-                    submitBtn.text('Güncelle').removeClass('btn-primary').addClass('btn-warning');
+                    submitBtn.text('GÃ¼ncelle').removeClass('btn-primary').addClass('btn-warning');
 
                     // Add Cancel Button if not exists
                     if ($('#cancelEdit').length === 0) {
-                        submitBtn.after('<button type="button" id="cancelEdit" class="btn btn-secondary btn-block mt-2">İptal</button>');
+                        submitBtn.after('<button type="button" id="cancelEdit" class="btn btn-secondary btn-block mt-2">Ä°ptal</button>');
                     }
 
                     $('#cancelEdit').off('click').on('click', resetForm);
 
                 } catch (error) {
                     console.error('Error fetching details:', error);
-                    alert('Duyuru bilgileri alınamadı.');
+                    alert('Duyuru bilgileri alÄ±namadÄ±.');
                 }
             }
 
@@ -557,7 +557,7 @@
 
                 $('.card-header h6').text('Yeni Duyuru / Haber Ekle');
                 const submitBtn = $('form button[type="submit"]');
-                submitBtn.text('Kaydet ve Yayınla').removeClass('btn-warning').addClass('btn-primary');
+                submitBtn.text('Kaydet ve YayÄ±nla').removeClass('btn-warning').addClass('btn-primary');
                 $('#cancelEdit').remove();
             }
 
@@ -579,7 +579,7 @@
 
                 } catch (error) {
                     console.error('Delete error:', error);
-                    alert("Silme hatası: " + error.message);
+                    alert("Silme hatasÄ±: " + error.message);
                 }
             }
 
