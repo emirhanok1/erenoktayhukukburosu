@@ -51,44 +51,80 @@ document.addEventListener("DOMContentLoaded", async function () {
     // --- Dynamic Announcements (Supabase) ---
     const blogContainer = document.getElementById('blog-carousel-container');
     if (blogContainer && window.supabaseClient) {
-        try {
-            const { data: announcements, error } = await window.supabaseClient
-                .from('announcements')
-                .select('*')
-                .eq('is_active', true)
-                .order('created_at', { ascending: false })
-                .limit(3);
+        const fetchAnnouncements = async () => {
+            try {
+                const { data: announcements, error } = await window.supabaseClient
+                    .from('announcements')
+                    .select('*')
+                    .eq('is_active', true)
+                    .order('created_at', { ascending: false })
+                    .limit(3);
 
-            if (error) throw error;
+                if (error) throw error;
 
-            if (announcements && announcements.length > 0) {
-                let html = '';
-                announcements.forEach(item => {
-                    const date = new Date(item.created_at).toLocaleDateString('tr-TR');
-                    // Fallback image if none provided
-                    const img = item.image_url || 'img/blog-1.jpg';
-                    html += `
-                    <div class="blog-item">
-                        <img src="${img}" alt="${item.title}" style="height: 200px; object-fit: cover;">
-                        <h3>${item.title}</h3>
-                        <div class="meta">
-                            <i class="fa fa-calendar-alt"></i>
-                            <p>${date}</p>
-                        </div>
-                        <p>${item.content.substring(0, 100)}...</p>
-                        <button type="button" class="btn btn-primary" onclick="openAnnouncementModal('${item.id}')">
-                            Detayları Oku <i class="fa fa-angle-right"></i>
-                        </button>
-                    </div>`;
-                });
-                blogContainer.innerHTML = html;
-            } else {
-                // blogContainer.innerHTML = '<p class="text-center">Güncel duyuru bulunmamaktadır.</p>';
+                if (announcements && announcements.length > 0) {
+                    let html = '';
+                    announcements.forEach(item => {
+                        const date = new Date(item.created_at).toLocaleDateString('tr-TR');
+                        // Fallback image if none provided
+                        const img = item.image_url || 'img/blog-1.jpg';
+                        html += `
+                        <div class="blog-item">
+                            <img src="${img}" alt="${item.title}" style="height: 200px; object-fit: cover;">
+                            <h3>${item.title}</h3>
+                            <div class="meta">
+                                <i class="fa fa-calendar-alt"></i>
+                                <p>${date}</p>
+                            </div>
+                            <p>${item.content.substring(0, 100)}...</p>
+                            <button type="button" class="btn btn-primary" onclick="openAnnouncementModal('${item.id}')">
+                                Detayları Oku <i class="fa fa-angle-right"></i>
+                            </button>
+                        </div>`;
+                    });
+                    blogContainer.innerHTML = html;
+
+                    // Re-initialize Owl Carousel if jQuery is loaded after dynamic content is injected
+                    if (window.jQuery && $(blogContainer).length > 0) {
+                        if ($(blogContainer).data('owl.carousel')) {
+                            $(blogContainer).trigger('destroy.owl.carousel');
+                        }
+                        $(blogContainer).owlCarousel({
+                            autoplay: true,
+                            dots: true,
+                            loop: false,
+                            rewind: true,
+                            margin: 30,
+                            responsive: {
+                                0: { items: 1 },
+                                576: { items: 1 },
+                                768: { items: 2 },
+                                992: { items: 3 }
+                            }
+                        });
+                    }
+                }
+            } catch (err) {
+                console.error('Duyurular yüklenirken hata:', err);
             }
+        };
 
-        } catch (err) {
-            console.error('Duyurular yüklenirken hata:', err);
-        }
+        const observerOptions = {
+            root: null,
+            rootMargin: '200px 0px',
+            threshold: 0.1
+        };
+
+        const announcementsObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    fetchAnnouncements();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        announcementsObserver.observe(blogContainer);
     }
 
     // --- Carousel Initialization (Owl Carousel) ---
